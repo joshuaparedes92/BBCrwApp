@@ -117,7 +117,6 @@
         android:id="@+id/spinner1"
         android:layout_below="@+id/textView4"
         android:layout_toRightOf="@+id/Question1"
-        android:layout_toEndOf="@+id/Question1"
         android:layout_alignBottom="@+id/Question1"
         android:layout_marginLeft="5dp"
         android:clickable="false" />
@@ -165,7 +164,9 @@
         android:layout_alignParentStart="true"
         android:checked="false"
         android:enabled="false"
-        android:buttonTint="#5783ea" />
+        android:buttonTint="#5783ea"
+        android:clickable="false"
+        android:textColor="#000000" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -267,9 +268,10 @@
         android:id="@+id/spinner2"
         android:layout_alignTop="@+id/Question5"
         android:layout_toRightOf="@+id/Question5"
-        android:layout_toEndOf="@+id/Question5"
         android:layout_alignBottom="@+id/Question5"
-        android:layout_marginLeft="5dp" />
+        android:layout_marginLeft="5dp"
+        android:layout_alignRight="@+id/Question3checkBox3"
+        android:layout_alignEnd="@+id/Question3checkBox3" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -290,7 +292,8 @@
         android:layout_below="@+id/Question6"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:buttonTint="#5783ea" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -299,7 +302,8 @@
         android:id="@+id/Question6CheckBox2"
         android:layout_alignTop="@+id/Question6CheckBox1"
         android:layout_toRightOf="@+id/Question6CheckBox1"
-        android:layout_toEndOf="@+id/Question6CheckBox1" />
+        android:layout_toEndOf="@+id/Question6CheckBox1"
+        android:buttonTint="#5783ea" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -309,7 +313,8 @@
         android:layout_below="@+id/Question6"
         android:layout_toRightOf="@+id/Question6"
         android:layout_toEndOf="@+id/Question6"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:buttonTint="#5783ea" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -319,7 +324,8 @@
         android:layout_below="@+id/Question6"
         android:layout_toRightOf="@+id/Question6CheckBox3"
         android:layout_toEndOf="@+id/Question6CheckBox3"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:buttonTint="#5783ea" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -329,7 +335,8 @@
         android:layout_below="@+id/Question6"
         android:layout_toRightOf="@+id/Question6CheckBox4"
         android:layout_toEndOf="@+id/Question6CheckBox4"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:buttonTint="#5783ea" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -347,12 +354,16 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText5"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="I recommend..."
+        android:ems="10"
+        android:id="@+id/editText4"
         android:layout_below="@+id/Recommendation"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/spinner2"
-        android:layout_alignEnd="@+id/spinner2" />
+        android:layout_alignRight="@+id/editText2"
+        android:layout_alignEnd="@+id/editText2" />
 
 
 </RelativeLayout>
