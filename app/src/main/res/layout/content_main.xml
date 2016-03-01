@@ -18,7 +18,7 @@
         android:text="Home Theater "
         android:id="@+id/HTtextview"
         android:textStyle="bold"
-        android:textSize="24dp"
+        android:textSize="30dp"
         android:textColor="#3988c0" />
 
 
@@ -32,7 +32,31 @@
         android:layout_toRightOf="@+id/HTtextview"
         android:layout_toEndOf="@+id/HTtextview"
         android:textStyle="bold"
-        android:textSize="20dp"/>
+        android:textSize="24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Contact Me"
+        android:id="@+id/ContactMe"
+        android:textStyle="bold"
+        android:textColor="#3988c0"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/SellerName"
+        android:layout_below="@+id/ContactMe"
+        android:layout_alignRight="@+id/HTtextview"
+        android:layout_alignEnd="@+id/HTtextview" />
 
 
 </RelativeLayout>
