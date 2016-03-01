@@ -15,7 +15,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home Theater "
+        android:text="@string/HomeTheaterTextView"
         android:id="@+id/HTtextview"
         android:textStyle="bold"
         android:textSize="30dp"
@@ -26,19 +26,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Customer Recommendation Worksheet"
+        android:text="@string/CRWTextView"
         android:id="@+id/textView2"
         android:layout_alignBottom="@+id/HTtextview"
         android:layout_toRightOf="@+id/HTtextview"
         android:layout_toEndOf="@+id/HTtextview"
         android:textStyle="bold"
-        android:textSize="24dp"/>
+        android:textSize="24dp"
+        android:clickable="false" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Contact Me"
+        android:text="@string/ContactMeTextView"
         android:id="@+id/ContactMe"
         android:textStyle="bold"
         android:textColor="#3988c0"
@@ -51,12 +52,90 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text=""
+        android:hint="Enter Name"
         android:ems="10"
-        android:id="@+id/SellerName"
+        android:id="@+id/ContactMeName"
         android:layout_below="@+id/ContactMe"
         android:layout_alignRight="@+id/HTtextview"
         android:layout_alignEnd="@+id/HTtextview" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/CustomerInfoTextView"
+        android:id="@+id/CustomerName"
+        android:layout_marginRight="99dp"
+        android:layout_marginEnd="99dp"
+        android:textColor="#3988c0"
+        android:textStyle="bold"
+        android:layout_above="@+id/ContactMeName"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text=""
+        android:hint="Enter Name"
+        android:ems="10"
+        android:id="@+id/editTextCustomerName"
+        android:layout_below="@+id/CustomerName"
+        android:layout_alignLeft="@+id/CustomerName"
+        android:layout_alignStart="@+id/CustomerName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/YouTextView"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/ContactMeName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="34dp"
+        android:textColor="#e54b4b"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/Question1TextView"
+        android:id="@+id/Question1"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner1"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_toRightOf="@+id/Question1"
+        android:layout_toEndOf="@+id/Question1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/Question2TextView"
+        android:id="@+id/Question2"
+        android:layout_below="@+id/spinner1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Question2editText"
+        android:layout_below="@+id/Question1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/Question2"
+        android:layout_toEndOf="@+id/Question2" />
 
 
 </RelativeLayout>
