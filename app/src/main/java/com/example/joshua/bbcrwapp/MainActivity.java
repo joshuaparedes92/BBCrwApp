@@ -57,6 +57,31 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
                         .setAction("Action", null).show();
             }
         });
+
+        //Spinner2 Element
+        Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+
+        //Spinner Click Listener
+        spinner2.setOnItemSelectedListener(this);
+
+        //Spinner Drop Down elements
+        List<String> answer2 = new ArrayList<String>();
+        answer2.add("Living Room");
+        answer2.add("Small Bedroom");
+        answer2.add("Large Bedroom");
+        answer2.add("Kitchen");
+        answer2.add("Media room");
+        answer2.add("Outside");
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, answer2);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        spinner2.setAdapter(dataAdapter2);
+
     }
 
     @Override
