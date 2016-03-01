@@ -18,7 +18,7 @@
         android:text="@string/HomeTheaterTextView"
         android:id="@+id/HTtextview"
         android:textStyle="bold"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textColor="#3988c0" />
 
 
@@ -28,12 +28,14 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/CRWTextView"
         android:id="@+id/textView2"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:clickable="false"
         android:layout_alignBottom="@+id/HTtextview"
         android:layout_toRightOf="@+id/HTtextview"
         android:layout_toEndOf="@+id/HTtextview"
-        android:textStyle="bold"
-        android:textSize="24dp"
-        android:clickable="false" />
+        android:layout_marginLeft="37dp"
+        android:layout_marginStart="5dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -79,7 +81,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:text=""
-        android:hint="Enter Name"
+        android:hint="@string/EnterNameHint"
         android:ems="10"
         android:id="@+id/editTextCustomerName"
         android:layout_below="@+id/CustomerName"
@@ -95,7 +97,7 @@
         android:layout_below="@+id/ContactMeName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="34sp"
         android:textColor="#e54b4b"
         android:textStyle="bold" />
 
@@ -113,29 +115,106 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinner1"
-        android:layout_alignTop="@+id/textView4"
+        android:layout_below="@+id/textView4"
         android:layout_toRightOf="@+id/Question1"
-        android:layout_toEndOf="@+id/Question1" />
+        android:layout_toEndOf="@+id/Question1"
+        android:layout_alignBottom="@+id/Question1" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/Question2TextView"
-        android:id="@+id/Question2"
-        android:layout_below="@+id/spinner1"
+        android:text="Do you have a specific product in mind or have you seen anything you like?"
+        android:id="@+id/Question2TextView"
+        android:layout_below="@+id/Question1"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/Question2editText"
-        android:layout_below="@+id/Question1"
+        android:id="@+id/editText"
+        android:layout_below="@+id/spinner1"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/Question2"
-        android:layout_toEndOf="@+id/Question2" />
+        android:layout_toRightOf="@+id/Question2TextView"
+        android:layout_toEndOf="@+id/Question2TextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/Question3TextView"
+        android:id="@+id/Question3TextView"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Picture Quality"
+        android:id="@+id/Question3checkBox1"
+        android:layout_below="@+id/Question3TextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Question3CheckBox2"
+        android:id="@+id/Question3checkBox2"
+        android:layout_below="@+id/Question3TextView"
+        android:layout_toRightOf="@+id/Question3checkBox1"
+        android:layout_toEndOf="@+id/Question3checkBox1" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Question3CheckBox3"
+        android:id="@+id/Question3checkBox3"
+        android:layout_alignTop="@+id/Question3checkBox2"
+        android:layout_toRightOf="@+id/Question3checkBox2"
+        android:layout_toEndOf="@+id/Question3checkBox2" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Question3CheckBox4"
+        android:id="@+id/Question3checkBox4"
+        android:layout_alignTop="@+id/Question3checkBox3"
+        android:layout_toRightOf="@+id/Question3checkBox3"
+        android:layout_toEndOf="@+id/Question3checkBox3" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Question3CheckBox5"
+        android:id="@+id/Question3checkBox5"
+        android:layout_alignTop="@+id/Question3checkBox4"
+        android:layout_toRightOf="@+id/Question3checkBox4"
+        android:layout_toEndOf="@+id/Question3checkBox4" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Question3CheckBox6"
+        android:id="@+id/Question3checkBox6"
+        android:layout_alignTop="@+id/Question3checkBox5"
+        android:layout_toRightOf="@+id/Question3checkBox5"
+        android:layout_toEndOf="@+id/Question3checkBox5" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:layout_alignBottom="@+id/Question3checkBox6"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText"
+        android:layout_toRightOf="@+id/Question3checkBox6"
+        android:layout_toEndOf="@+id/Question3checkBox6" />
 
 
 </RelativeLayout>

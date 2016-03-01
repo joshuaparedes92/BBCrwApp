@@ -1,11 +1,18 @@
 <resources>
     <string name="app_name">Best Buy CRW</string>
     <string name="action_settings">Settings</string>
-    <string name="HomeTheaterTextView">Home Theater</string>
+    <string name="HomeTheaterTextView">Home Theater </string>
     <string name="CRWTextView">Customer Recommendation Worksheet</string>
     <string name="ContactMeTextView">Contact Me</string>
     <string name="CustomerInfoTextView">Customer Information</string>
     <string name="YouTextView">YOU</string>
     <string name="Question1TextView">Are you a My Best Buy member or a Best Buy Credit CardMember?</string>
     <string name="Question2TextView">Do you have a specific product in mind or have you seen anything you like?</string>
+    <string name="EnterNameHint">Enter Name</string>
+    <string name="Question3TextView">What is important to you?</string>
+    <string name="Question3CheckBox2">Sound Quality</string>
+    <string name="Question3CheckBox3">Size</string>
+    <string name="Question3CheckBox4">Warranty</string>
+    <string name="Question3CheckBox5">Inputs</string>
+    <string name="Question3CheckBox6">Other</string>
 </resources>
