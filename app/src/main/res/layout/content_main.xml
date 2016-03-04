@@ -54,7 +54,6 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:text=""
         android:hint="Enter Name"
         android:ems="10"
@@ -80,7 +79,6 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:text=""
         android:hint="@string/EnterNameHint"
         android:ems="10"
