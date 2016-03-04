@@ -1,5 +1,6 @@
 package com.example.joshua.bbcrwapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -114,5 +115,16 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
     }
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
+    }
+
+    //This is going to be the Intent to Switch to the Second Activity
+    public void onGetNameClick(View view) {
+        Intent getNameScreenIntent = new Intent(this, Main2Activity.class);
+
+        final  int result = 1;
+
+        startActivity(getNameScreenIntent);
+
+
     }
 }
