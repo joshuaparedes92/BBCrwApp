@@ -21,7 +21,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:id="@+id/linearLayout">
 
         <TextView
             android:layout_width="wrap_content"
@@ -117,5 +118,184 @@
                 android:id="@+id/YTM_spinner4" />
         </LinearLayout>
     </LinearLayout>
+    <AbsoluteLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/linearLayout"
+        android:layout_alignEnd="@+id/linearLayout"
+        android:layout_below="@+id/linearLayout">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_y="10dp"
+            android:id="@+id/Seperator" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Use the space below to map out all of the devices that will be a part of your Home Theater Solution:"
+            android:id="@+id/textView"
+            android:layout_x="0dp"
+            android:layout_y="20dp"
+            android:textColor="#5783ea"
+            android:textStyle="bold"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/tvStand_ImageView"
+            android:layout_x="8dp"
+            android:layout_y="42dp"
+            android:src="@drawable/tv_stand" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Audio"
+            android:id="@+id/textView3"
+            android:layout_x="530dp"
+            android:layout_y="93dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Blu-ray"
+            android:id="@+id/textView5"
+            android:layout_x="530dp"
+            android:layout_y="120dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Gaming"
+            android:id="@+id/textView6"
+            android:layout_x="530dp"
+            android:layout_y="145dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Cable Box"
+            android:id="@+id/textView7"
+            android:layout_x="530dp"
+            android:layout_y="170dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Surge Protector"
+            android:id="@+id/textView8"
+            android:layout_x="530dp"
+            android:layout_y="195dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Streaming Devices"
+            android:id="@+id/textView9"
+            android:layout_x="530dp"
+            android:layout_y="220dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Key A/V Items"
+            android:id="@+id/KeyAVItems_TextView"
+            android:layout_x="504dp"
+            android:layout_y="57dp"
+            android:textStyle="bold"
+            android:textColor="#b964ee" />
+
+        <View
+            android:layout_width="150dp"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_y="94dp"
+            android:layout_x="190dp"
+            android:id="@+id/avLine1" />
+        <View
+            android:layout_width="150dp"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_y="130dp"
+            android:layout_x="190dp"
+            android:id="@+id/avLine2" />
+        <View
+            android:layout_width="150dp"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_y="160dp"
+            android:layout_x="190dp"
+            android:id="@+id/avLine3" />
+        <View
+            android:layout_width="150dp"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_y="190dp"
+            android:layout_x="190dp"
+            android:id="@+id/avLine4" />
+        <View
+            android:layout_width="150dp"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_y="220dp"
+            android:layout_x="190dp"
+            android:id="@+id/avLine5" />
+        <View
+            android:layout_width="150dp"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_y="250dp"
+            android:layout_x="190dp"
+            android:id="@+id/avLine6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Stereo Reciever"
+            android:id="@+id/textView10"
+            android:layout_x="530dp"
+            android:layout_y="245dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stand"
+            android:id="@+id/checkBox"
+            android:layout_x="79dp"
+            android:layout_y="214dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mount"
+            android:id="@+id/checkBox2"
+            android:layout_x="79dp"
+            android:layout_y="240dp" />
+
+        <ImageView
+            android:layout_width="191dp"
+            android:layout_height="191dp"
+            android:id="@+id/imageView"
+            android:layout_x="490dp"
+            android:layout_y="280dp"
+            android:src="@drawable/access_point" />
+
+
+    </AbsoluteLayout>
 </RelativeLayout>
 
