@@ -9,6 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:id="@+id/MainLayout"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.joshua.bbcrwapp.MainActivity"
     tools:showIn="@layout/activity_main">
@@ -398,6 +399,17 @@
         android:layout_alignRight="@+id/editText4"
         android:layout_alignEnd="@+id/editText4"
         android:layout_marginTop="-5dp" />
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/ScreenShareButton"
+        android:onClick="onGetScreenClick"
+        android:src="@drawable/ic_folder_shared_black_48dp"
+        android:background="@drawable/abc_item_background_holo_dark"
+        android:layout_alignBottom="@+id/NextScreenimageButton"
+        android:layout_toRightOf="@+id/editTextCustomerName"
+        android:layout_toEndOf="@+id/editTextCustomerName" />
 
 
 </RelativeLayout>

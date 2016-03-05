@@ -1,7 +1,10 @@
 package com.example.joshua.bbcrwapp;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -15,11 +18,12 @@ import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements OnItemSelectedListener {
-
 
 
     @Override
@@ -113,6 +117,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         // On selecting a spinner item
         String item = parent.getItemAtPosition(position).toString();
     }
+
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
     }
@@ -121,10 +126,46 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
     public void onGetNameClick(View view) {
         Intent getNameScreenIntent = new Intent(this, Main2Activity.class);
 
-        final  int result = 1;
+        final int result = 1;
 
         startActivity(getNameScreenIntent);
+    }
 
+    public void onGetScreenClick(View view) {
+        view = findViewById(R.id.MainLayout);//your layout id
+        view.getRootView();
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            File picDir = new File(Environment.getExternalStorageDirectory() + "/CRW_Pic");
+            if (!picDir.exists()) {
+                picDir.mkdir();
+            }
+            view.setDrawingCacheEnabled(true);
+            view.buildDrawingCache(true);
+            Bitmap bitmap = view.getDrawingCache();
+//          Date date = new Date();
+            String fileName = "BBcrw" + ".jpg";
+            File picFile = new File(picDir + "/" + fileName);
+            try {
+                picFile.createNewFile();
+                FileOutputStream picOut = new FileOutputStream(picFile);
+                bitmap = Bitmap.createBitmap(bitmap, 1920, 1080, bitmap.getWidth(), (int) (bitmap.getHeight()));
+                boolean saved = bitmap.compress(Bitmap.CompressFormat.JPEG, 100, picOut);
+                if (saved) {
+                    Toast.makeText(getApplicationContext(), "Image saved to your device Pictures " + "directory!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Nothing Happened", Toast.LENGTH_LONG).show();
+                }
+                picOut.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            view.destroyDrawingCache();
 
+            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            sharingIntent.setType("image/jpeg");
+            sharingIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(picFile.getAbsolutePath()));
+            startActivity(Intent.createChooser(sharingIntent, "Share via"));
+        }
     }
 }
