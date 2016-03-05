@@ -433,7 +433,6 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Notes:"
-            android:maxLines="3"
             android:id="@+id/Notes_textView"
             android:textStyle="bold"
             android:textColor="#e54b4b"
@@ -444,11 +443,11 @@
             android:layout_width="650dp"
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
+            android:maxLines="3"
             android:ems="10"
             android:id="@+id/editText5"
             android:layout_x="72dp"
             android:layout_y="550dp" />
-
 
     </AbsoluteLayout>
 </RelativeLayout>
