@@ -151,7 +151,7 @@
         android:layout_below="@+id/editText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="15dp" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -222,7 +222,7 @@
         android:layout_below="@+id/Question3checkBox1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="15dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -231,9 +231,9 @@
         android:layout_below="@+id/Question3checkBox2"
         android:layout_toRightOf="@+id/Question4"
         android:layout_toEndOf="@+id/Question4"
-        android:layout_marginLeft="5dp"
         android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText" />
+        android:layout_alignEnd="@+id/editText"
+        android:layout_marginLeft="5dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -244,7 +244,7 @@
         android:layout_below="@+id/editText3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="15dp" />
 
     <Spinner
         android:layout_width="wrap_content"
@@ -273,11 +273,10 @@
         android:layout_height="wrap_content"
         android:text="Cable TV"
         android:id="@+id/Question6CheckBox1"
-        android:layout_below="@+id/Question6"
+        android:buttonTint="#5783ea"
+        android:layout_alignTop="@+id/Question6CheckBox3"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:buttonTint="#5783ea" />
+        android:layout_alignParentStart="true" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -340,7 +339,7 @@
         android:layout_height="wrap_content"
         android:inputType="text|textMultiLine|textCapSentences"
         android:text=""
-        android:hint="I recommend..."
+        android:hint="@string/editText4_hint"
         android:ems="10"
         android:id="@+id/editText4"
         android:layout_below="@+id/Recommendation"
@@ -371,7 +370,7 @@
         android:layout_alignEnd="@+id/editText3"
         android:layout_above="@+id/editText3"
         android:layout_alignTop="@+id/Question3TextView"
-        android:layout_marginLeft="5dp" />
+        android:layout_marginLeft="10dp" />
 
 
 </RelativeLayout>

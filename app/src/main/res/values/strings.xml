@@ -16,4 +16,8 @@
     <string name="Question3CheckBox5">Inputs</string>
     <string name="Question3CheckBox6">Other</string>
     <string name="title_activity_main2">Best Buy CRW Page 2</string>
+    <string name="YTM_TextView3">How old is your router <i>(Years)</i> </string>
+    <string name="YTM_TextView2">Current Internet Speed <i>(Mb/s)</i> </string>
+    <string name="YTM_TextView4">Max Speed of current router <i>(Mb/s)</i></string>
+    <string name="editText4_hint"><i>I recommend...</i> </string>
 </resources>

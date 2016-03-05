@@ -17,11 +17,10 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="false"
         android:weightSum="1">
 
         <TextView
@@ -46,12 +45,76 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="TV/Internet Service Provider"
                 android:id="@+id/YTM_TextView1"
-                android:layout_marginRight="5dp" />
+                android:layout_marginRight="5dp"
+                android:textSize="15dp" />
 
             <Spinner
                 android:layout_width="wrap_content"
                 android:layout_height="31dp"
                 android:id="@+id/YTM_spinner1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.03" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/YTM_TextView2"
+                android:id="@+id/YTM_TextView2"
+                android:layout_marginRight="5dp"
+                android:textSize="15dp" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:id="@+id/YTM_spinner2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.03" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/YTM_TextView3"
+                android:id="@+id/YTM_TextView3"
+                android:layout_marginRight="5dp"
+                android:textSize="15dp" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:id="@+id/YTM_spinner3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.03" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/YTM_TextView4"
+                android:id="@+id/YTM_textView4"
+                android:layout_marginRight="5dp"
+                android:textSize="15dp" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:id="@+id/YTM_spinner4" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
