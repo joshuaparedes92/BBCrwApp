@@ -139,7 +139,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Use the space below to map out all of the devices that will be a part of your Home Theater Solution: (You can Drap and Drop items)"
+            android:text="@string/CRW2_TextView"
             android:id="@+id/textView"
             android:layout_x="0dp"
             android:layout_y="20dp"
