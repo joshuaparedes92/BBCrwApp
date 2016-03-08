@@ -2,6 +2,7 @@ package com.example.joshua.bbcrwapp;
 
 import android.content.ClipData;
 import android.content.ClipDescription;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -27,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main2Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
-, View.OnTouchListener, View.OnDragListener {
+, View.OnTouchListener {
 
     TextView text1;
 
@@ -39,15 +40,22 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
         setSupportActionBar(toolbar);
 
         //Draggable Initialize
-        findViewById(R.id.textView3).setOnTouchListener(this);
+        text1= (TextView)findViewById(R.id.textView3);
+        text1.setOnTouchListener(this);
         findViewById(R.id.textView5).setOnTouchListener(this);
         findViewById(R.id.textView6).setOnTouchListener(this);
         findViewById(R.id.textView7).setOnTouchListener(this);
         findViewById(R.id.textView8).setOnTouchListener(this);
         findViewById(R.id.textView9).setOnTouchListener(this);
         findViewById(R.id.textView10).setOnTouchListener(this);
-        findViewById(R.id.container).setOnDragListener(this);
-        findViewById(R.id.container1).setOnDragListener(this);
+        findViewById(R.id.textView12).setOnTouchListener(this);
+        findViewById(R.id.textView13).setOnTouchListener(this);
+        findViewById(R.id.textView14).setOnTouchListener(this);
+        findViewById(R.id.textView15).setOnTouchListener(this);
+        findViewById(R.id.textView16).setOnTouchListener(this);
+        findViewById(R.id.textView17).setOnTouchListener(this);
+        findViewById(R.id.textView18).setOnTouchListener(this);
+        findViewById(R.id.textView19).setOnTouchListener(this);
 
 
         //YTM_Spinner1 Initialization
@@ -179,32 +187,26 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-
-    //Drag Function
+    float x,y= 0.0f;
+    boolean moving = false;
     @Override
-    public boolean onTouch(View v, MotionEvent e) {
-        if (e.getAction() == MotionEvent.ACTION_DOWN) {
-            View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
-            v.startDrag(null, shadowBuilder, v, 0);
-            v.setVisibility(View.INVISIBLE);
-            return true;
+    public boolean onTouch(View v, MotionEvent e){
+        switch(e.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                moving = true;
+                break;
+            case MotionEvent.ACTION_MOVE:
+                if(moving){
+                    x= e.getRawX()-60;
+                    y= e.getRawY()-550;
+                    v.setX(x);
+                    v.setY(y);
+                }
+                break;
+            case MotionEvent.ACTION_UP:
+                moving = false;
+                break;
         }
-            else{
-            return false;
-        }
+        return true;
     }
-
-    @Override
-    public boolean onDrag(View v, DragEvent e) {
-
-            if (e.getAction() == DragEvent.ACTION_DROP) {
-                View view = (View) e.getLocalState();
-                ViewGroup from = (ViewGroup) view.getParent();
-                from.removeView(view);
-                LinearLayout to = (LinearLayout) v;
-                to.addView(view);
-                view.setVisibility(View.VISIBLE);
-            }
-            return true;
-        }
 }

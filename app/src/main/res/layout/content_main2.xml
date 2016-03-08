@@ -139,7 +139,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Use the space below to map out all of the devices that will be a part of your Home Theater Solution:"
+            android:text="Use the space below to map out all of the devices that will be a part of your Home Theater Solution: (You can Drap and Drop items)"
             android:id="@+id/textView"
             android:layout_x="0dp"
             android:layout_y="20dp"
@@ -234,42 +234,49 @@
             android:layout_width="150dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="94dp"
+            android:layout_y="85dp"
             android:layout_x="190dp"
             android:id="@+id/avLine1" />
         <View
             android:layout_width="150dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="115dp"
+            android:layout_y="260dp"
+            android:layout_x="190dp"
+            android:id="@+id/avLine16" />
+        <View
+            android:layout_width="150dp"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_y="112dp"
             android:layout_x="190dp"
             android:id="@+id/avLine2" />
         <View
             android:layout_width="150dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="135dp"
+            android:layout_y="142dp"
             android:layout_x="190dp"
             android:id="@+id/avLine3" />
         <View
             android:layout_width="150dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="155dp"
+            android:layout_y="170dp"
             android:layout_x="190dp"
             android:id="@+id/avLine4" />
         <View
             android:layout_width="150dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="175dp"
+            android:layout_y="200dp"
             android:layout_x="190dp"
             android:id="@+id/avLine5" />
         <View
             android:layout_width="150dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="195dp"
+            android:layout_y="230dp"
             android:layout_x="190dp"
             android:id="@+id/avLine6" />
 
@@ -279,7 +286,8 @@
             android:text="Stand"
             android:id="@+id/checkBox"
             android:layout_x="79dp"
-            android:layout_y="214dp" />
+            android:layout_y="214dp"
+            android:buttonTint="#5783ea" />
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -287,7 +295,8 @@
             android:text="Mount"
             android:id="@+id/checkBox2"
             android:layout_x="79dp"
-            android:layout_y="240dp" />
+            android:layout_y="240dp"
+            android:buttonTint="#5783ea" />
 
         <ImageView
             android:layout_width="191dp"
@@ -450,17 +459,6 @@
             android:id="@+id/editText5"
             android:layout_x="72dp"
             android:layout_y="550dp" />
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="158dp"
-            android:layout_height="211dp"
-            android:layout_x="186dp"
-            android:layout_y="64dp"
-            android:showDividers="middle"
-            android:divider="@drawable/empty_tall_divider"
-            android:id="@+id/container1"
-            android:gravity="center_horizontal"></LinearLayout>
 
     </AbsoluteLayout>
 </RelativeLayout>
