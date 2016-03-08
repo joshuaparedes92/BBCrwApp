@@ -1,19 +1,26 @@
 package com.example.joshua.bbcrwapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.AttributeSet;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Toast;
@@ -33,7 +40,53 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //Spinner Element
+
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();}
+
+
+            });
+
+        /*
+        class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
+            public ScrollAwareFABBehavior(Context context, AttributeSet attrs) {
+                super();
+            }
+
+            @Override
+            public boolean onStartNestedScroll(final CoordinatorLayout coordinatorLayout,
+                                               final FloatingActionButton child,
+                                               final View directTargetChild, final View target, final int nestedScrollAxes) {
+                // Ensure we react to vertical scrolling
+                return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL
+                        || super.onStartNestedScroll(coordinatorLayout, child,
+                        directTargetChild, target, nestedScrollAxes);
+            }
+
+            @Override
+            public void onNestedScroll(final CoordinatorLayout coordinatorLayout,
+                                       final FloatingActionButton child,
+                                       final View target, final int dxConsumed, final int dyConsumed,
+                                       final int dxUnconsumed, final int dyUnconsumed) {
+                super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed,
+                        dxUnconsumed, dyUnconsumed);
+                if (dyConsumed > 0 && child.getVisibility() == View.VISIBLE) {
+                    // User scrolled down and the FAB is currently visible -> hide the FAB
+                    child.hide();
+                } else if (dyConsumed < 0 && child.getVisibility() != View.VISIBLE) {
+                    // User scrolled up and the FAB is currently not visible -> show the FAB
+                    child.show();
+                }
+            }
+        }
+        */
+
+
+        //Spinner1 Element
         Spinner spinner1 = (Spinner) findViewById(R.id.spinner1);
 
         //Spinner Click Listener
@@ -52,16 +105,6 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
 
         // attaching data adapter to spinner
         spinner1.setAdapter(dataAdapter);
-
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         //Spinner2 Element
         Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
@@ -88,6 +131,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         spinner2.setAdapter(dataAdapter2);
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -131,41 +175,4 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         startActivity(getNameScreenIntent);
     }
 
-    public void onGetScreenClick(View view) {
-        view = findViewById(R.id.MainLayout);//your layout id
-        view.getRootView();
-        String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-            File picDir = new File(Environment.getExternalStorageDirectory() + "/CRW_Pic");
-            if (!picDir.exists()) {
-                picDir.mkdir();
-            }
-            view.setDrawingCacheEnabled(true);
-            view.buildDrawingCache(true);
-            Bitmap bitmap = view.getDrawingCache();
-//          Date date = new Date();
-            String fileName = "BBcrw" + ".jpg";
-            File picFile = new File(picDir + "/" + fileName);
-            try {
-                picFile.createNewFile();
-                FileOutputStream picOut = new FileOutputStream(picFile);
-                bitmap = Bitmap.createBitmap(bitmap, 1920, 1080, bitmap.getWidth(), (int) (bitmap.getHeight()));
-                boolean saved = bitmap.compress(Bitmap.CompressFormat.JPEG, 100, picOut);
-                if (saved) {
-                    Toast.makeText(getApplicationContext(), "Image saved to your device Pictures " + "directory!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Nothing Happened", Toast.LENGTH_LONG).show();
-                }
-                picOut.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            view.destroyDrawingCache();
-
-            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-            sharingIntent.setType("image/jpeg");
-            sharingIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(picFile.getAbsolutePath()));
-            startActivity(Intent.createChooser(sharingIntent, "Share via"));
-        }
-    }
 }

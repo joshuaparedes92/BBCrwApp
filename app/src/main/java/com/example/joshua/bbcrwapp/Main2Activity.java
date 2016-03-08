@@ -1,19 +1,35 @@
 package com.example.joshua.bbcrwapp;
 
+import android.content.ClipData;
+import android.content.ClipDescription;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.DragEvent;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AbsoluteLayout;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main2Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class Main2Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
+, View.OnTouchListener, View.OnDragListener {
+
+    TextView text1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +37,18 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //Draggable Initialize
+        findViewById(R.id.textView3).setOnTouchListener(this);
+        findViewById(R.id.textView5).setOnTouchListener(this);
+        findViewById(R.id.textView6).setOnTouchListener(this);
+        findViewById(R.id.textView7).setOnTouchListener(this);
+        findViewById(R.id.textView8).setOnTouchListener(this);
+        findViewById(R.id.textView9).setOnTouchListener(this);
+        findViewById(R.id.textView10).setOnTouchListener(this);
+        findViewById(R.id.container).setOnDragListener(this);
+        findViewById(R.id.container1).setOnDragListener(this);
+
 
         //YTM_Spinner1 Initialization
         //Spinner Element
@@ -151,4 +179,32 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+    //Drag Function
+    @Override
+    public boolean onTouch(View v, MotionEvent e) {
+        if (e.getAction() == MotionEvent.ACTION_DOWN) {
+            View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
+            v.startDrag(null, shadowBuilder, v, 0);
+            v.setVisibility(View.INVISIBLE);
+            return true;
+        }
+            else{
+            return false;
+        }
+    }
+
+    @Override
+    public boolean onDrag(View v, DragEvent e) {
+
+            if (e.getAction() == DragEvent.ACTION_DROP) {
+                View view = (View) e.getLocalState();
+                ViewGroup from = (ViewGroup) view.getParent();
+                from.removeView(view);
+                LinearLayout to = (LinearLayout) v;
+                to.addView(view);
+                view.setVisibility(View.VISIBLE);
+            }
+            return true;
+        }
 }

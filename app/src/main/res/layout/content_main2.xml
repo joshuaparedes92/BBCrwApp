@@ -125,7 +125,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/linearLayout"
         android:layout_alignEnd="@+id/linearLayout"
-        android:layout_below="@+id/linearLayout">
+        android:layout_below="@+id/linearLayout"
+        android:id="@+id/container">
 
         <View
             android:layout_width="match_parent"
@@ -161,7 +162,8 @@
             android:text="Audio"
             android:id="@+id/textView3"
             android:layout_x="505dp"
-            android:layout_y="95dp" />
+            android:layout_y="95dp"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -239,35 +241,35 @@
             android:layout_width="150dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="130dp"
+            android:layout_y="115dp"
             android:layout_x="190dp"
             android:id="@+id/avLine2" />
         <View
             android:layout_width="150dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="160dp"
+            android:layout_y="135dp"
             android:layout_x="190dp"
             android:id="@+id/avLine3" />
         <View
             android:layout_width="150dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="190dp"
+            android:layout_y="155dp"
             android:layout_x="190dp"
             android:id="@+id/avLine4" />
         <View
             android:layout_width="150dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="220dp"
+            android:layout_y="175dp"
             android:layout_x="190dp"
             android:id="@+id/avLine5" />
         <View
             android:layout_width="150dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="250dp"
+            android:layout_y="195dp"
             android:layout_x="190dp"
             android:id="@+id/avLine6" />
 
@@ -448,6 +450,17 @@
             android:id="@+id/editText5"
             android:layout_x="72dp"
             android:layout_y="550dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="158dp"
+            android:layout_height="211dp"
+            android:layout_x="186dp"
+            android:layout_y="64dp"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_tall_divider"
+            android:id="@+id/container1"
+            android:gravity="center_horizontal"></LinearLayout>
 
     </AbsoluteLayout>
 </RelativeLayout>
