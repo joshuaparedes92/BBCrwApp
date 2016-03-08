@@ -51,39 +51,6 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
 
             });
 
-        /*
-        class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
-            public ScrollAwareFABBehavior(Context context, AttributeSet attrs) {
-                super();
-            }
-
-            @Override
-            public boolean onStartNestedScroll(final CoordinatorLayout coordinatorLayout,
-                                               final FloatingActionButton child,
-                                               final View directTargetChild, final View target, final int nestedScrollAxes) {
-                // Ensure we react to vertical scrolling
-                return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL
-                        || super.onStartNestedScroll(coordinatorLayout, child,
-                        directTargetChild, target, nestedScrollAxes);
-            }
-
-            @Override
-            public void onNestedScroll(final CoordinatorLayout coordinatorLayout,
-                                       final FloatingActionButton child,
-                                       final View target, final int dxConsumed, final int dyConsumed,
-                                       final int dxUnconsumed, final int dyUnconsumed) {
-                super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed,
-                        dxUnconsumed, dyUnconsumed);
-                if (dyConsumed > 0 && child.getVisibility() == View.VISIBLE) {
-                    // User scrolled down and the FAB is currently visible -> hide the FAB
-                    child.hide();
-                } else if (dyConsumed < 0 && child.getVisibility() != View.VISIBLE) {
-                    // User scrolled up and the FAB is currently not visible -> show the FAB
-                    child.show();
-                }
-            }
-        }
-        */
 
 
         //Spinner1 Element
@@ -176,3 +143,14 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
     }
 
 }
+
+/* TODO Prepare for Alpha release
+   TODO 1. Fix TV Stand image in content_main2.xml
+   TODO 2. Create String Resources for various TextFields
+   TODO 3. Add more cable companies to YTM_Spinner 1
+   TODO 4. Program FAB button to open up Gmail
+   TODO 5. Create an Icon for the program
+   TODO 6. Add Page 2 text to page 2 button
+   TODO 7. Create a Screenshot button that takes a screen of the current Activity
+   TODO 8. Create Localizations
+  */

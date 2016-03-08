@@ -194,6 +194,11 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
         switch(e.getAction()){
             case MotionEvent.ACTION_DOWN:
                 moving = true;
+                x= e.getRawX()-60;
+                y= e.getRawY()-550;
+                v.setX(x);
+                v.setY(y);
+                v.getParent().requestDisallowInterceptTouchEvent(true);
                 break;
             case MotionEvent.ACTION_MOVE:
                 if(moving){
