@@ -2,6 +2,7 @@ package com.example.joshua.bbcrwapp;
 
 import android.content.ClipData;
 import android.content.ClipDescription;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -33,6 +34,7 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
 
     TextView text1;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,10 +42,10 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        findViewById(R.id.textView25).setOnClickListener(ColorChange);
 
         //Draggable Initialize
-        text1= (TextView)findViewById(R.id.textView3);
-        text1.setOnTouchListener(this);
+        findViewById(R.id.textView3).setOnTouchListener(this);
         findViewById(R.id.textView5).setOnTouchListener(this);
         findViewById(R.id.textView6).setOnTouchListener(this);
         findViewById(R.id.textView7).setOnTouchListener(this);
@@ -216,4 +218,22 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
         }
         return true;
     }
+
+    private boolean stateChanged;
+    private View.OnClickListener ColorChange = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch(v.getId()){
+                case R.id.textView25:
+                    if(stateChanged){
+                        v.setBackgroundColor(Color.LTGRAY);
+                    }else{
+                        v.setBackgroundColor(Color.GREEN);
+                    }
+                    stateChanged = !stateChanged;
+                    break;
+            }
+        }
+    };
+
 }
