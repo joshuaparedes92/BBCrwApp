@@ -514,7 +514,7 @@
             android:layout_width="150dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="260dp"
+            android:layout_y="245dp"
             android:layout_x="190dp"
             android:id="@+id/avLine16" />
         <View
@@ -542,14 +542,14 @@
             android:layout_width="150dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="200dp"
+            android:layout_y="192dp"
             android:layout_x="190dp"
             android:id="@+id/avLine5" />
         <View
             android:layout_width="150dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="230dp"
+            android:layout_y="220dp"
             android:layout_x="190dp"
             android:id="@+id/avLine6" />
 
@@ -662,9 +662,9 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="355dp"
-            android:layout_height="225dp"
+            android:layout_height="230dp"
             android:layout_x="374dp"
-            android:layout_y="52dp"
+            android:layout_y="58dp"
             android:id="@+id/topRight"
             android:baselineAligned="false"
             android:gravity="top|center">
