@@ -19,15 +19,15 @@
     tools:context="com.example.joshua.bbcrwapp.Main2Activity"
     tools:showIn="@layout/activity_main2">
 
-    <LinearLayout
+    <AbsoluteLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="110dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
         android:weightSum="1"
-        android:id="@+id/linearLayout">
+        android:id="@+id/Top_Portion">
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,107 +39,156 @@
             android:textColor="#5783ea"
             android:layout_marginBottom="10dp" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+        <Spinner
+            android:layout_width="125dp"
+            android:layout_height="31dp"
+            android:id="@+id/YTM_spinner4"
+            android:layout_x="578dp"
+            android:layout_y="60dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.03">
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/YTM_TextView4"
+            android:id="@+id/YTM_textView4"
+            android:layout_marginRight="5dp"
+            android:textSize="15dp"
+            android:layout_x="344dp"
+            android:layout_y="60dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="TV/Internet Service Provider"
-                android:id="@+id/YTM_TextView1"
-                android:layout_marginRight="5dp"
-                android:textSize="15dp" />
-
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="31dp"
-                android:id="@+id/YTM_spinner1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.03" >
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/YTM_TextView3"
+            android:id="@+id/YTM_TextView3"
+            android:layout_marginRight="5dp"
+            android:textSize="15dp"
+            android:layout_x="0dp"
+            android:layout_y="60dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/YTM_TextView2"
-                android:id="@+id/YTM_TextView2"
-                android:layout_marginRight="5dp"
-                android:textSize="15dp" />
+        <Spinner
+            android:layout_width="125dp"
+            android:layout_height="31dp"
+            android:id="@+id/YTM_spinner3"
+            android:layout_x="204dp"
+            android:layout_y="60dp" />
 
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="31dp"
-                android:id="@+id/YTM_spinner2" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.03" >
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/YTM_TextView2"
+            android:id="@+id/YTM_TextView2"
+            android:layout_marginRight="5dp"
+            android:textSize="15dp"
+            android:layout_x="346dp"
+            android:layout_y="30dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/YTM_TextView3"
-                android:id="@+id/YTM_TextView3"
-                android:layout_marginRight="5dp"
-                android:textSize="15dp" />
+        <Spinner
+            android:layout_width="125dp"
+            android:layout_height="31dp"
+            android:id="@+id/YTM_spinner2"
+            android:layout_x="562dp"
+            android:layout_y="30dp" />
 
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="31dp"
-                android:id="@+id/YTM_spinner3" />
-        </LinearLayout>
+        <Spinner
+            android:layout_width="125dp"
+            android:layout_height="31dp"
+            android:id="@+id/YTM_spinner1"
+            android:layout_x="200dp"
+            android:layout_y="30dp" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.03" >
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="TV/Internet Service Provider"
+            android:id="@+id/YTM_TextView1"
+            android:layout_marginRight="5dp"
+            android:textSize="15dp"
+            android:layout_x="0dp"
+            android:layout_y="30dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/YTM_TextView4"
-                android:id="@+id/YTM_textView4"
-                android:layout_marginRight="5dp"
-                android:textSize="15dp" />
-
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="31dp"
-                android:id="@+id/YTM_spinner4" />
-        </LinearLayout>
-    </LinearLayout>
+    </AbsoluteLayout>
 
     <AbsoluteLayout
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
+        android:layout_width="100dp"
+        android:layout_height="170dp"
+        android:layout_below="@+id/Top_Portion"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/linearLayout"
-        android:layout_alignEnd="@+id/linearLayout"
-        android:layout_below="@+id/linearLayout"
-        android:id="@+id/container">
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/Network_Table">
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="10dp"
-            android:id="@+id/Seperator" />
+            android:layout_y="50dp"
+            android:id="@+id/Separator2" />
+
+        <View
+            android:layout_width="600dp"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_y="0dp"
+            android:id="@+id/Separator6"
+            android:layout_above="@+id/Network_Table"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="95dp"
+            android:layout_marginStart="95dp"
+            android:layout_x="139dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_y="90dp"
+            android:id="@+id/Separator3" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_y="130dp"
+            android:id="@+id/Separator4" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="170dp"
+            android:background="@android:color/black"
+            android:layout_y="-2dp"
+            android:id="@+id/Separator5"
+            android:layout_x="139dp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="170dp"
+            android:background="@android:color/black"
+            android:layout_y="-2dp"
+            android:id="@+id/Separator7"
+            android:layout_x="735dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_y="167dp"
+            android:id="@+id/Separator8" />
+
+    </AbsoluteLayout>
+
+
+    <AbsoluteLayout
+        android:layout_width="wrap_content"
+        android:layout_height="665dp"
+        android:id="@+id/container"
+        android:paddingTop="0dp"
+        android:layout_below="@+id/Network_Table"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <TextView
             android:layout_width="wrap_content"
@@ -468,6 +517,7 @@
             android:layout_y="550dp" />
 
     </AbsoluteLayout>
+
 </RelativeLayout>
 </ScrollView>
 

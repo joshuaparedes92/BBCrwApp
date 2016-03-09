@@ -17,6 +17,7 @@ import android.widget.AbsoluteLayout;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
@@ -38,6 +39,7 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         //Draggable Initialize
         text1= (TextView)findViewById(R.id.textView3);
