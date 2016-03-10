@@ -265,7 +265,7 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
                     if(stateChanged1){
                         v.setBackgroundColor(Color.parseColor("#9aaff4"));
                     }else{
-                        v.setBackgroundColor(Color.GREEN);
+                        v.setBackgroundColor(Color.YELLOW);
                     }
                     stateChanged1 = !stateChanged1;
                     break;
@@ -274,7 +274,7 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
                 if(stateChanged2){
                     v.setBackgroundColor(Color.parseColor("#9aaff4"));
                 }else{
-                    v.setBackgroundColor(Color.GREEN);
+                    v.setBackgroundColor(Color.YELLOW);
                 }
                 stateChanged2 = !stateChanged2;
                 break;
@@ -283,7 +283,7 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
                     if(stateChanged3){
                         v.setBackgroundColor(Color.parseColor("#9aaff4"));
                     }else{
-                        v.setBackgroundColor(Color.GREEN);
+                        v.setBackgroundColor(Color.YELLOW);
                     }
                     stateChanged3 = !stateChanged3;
                     break;

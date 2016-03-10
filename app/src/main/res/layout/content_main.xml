@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:id="@+id/scroll">
+    android:id="@+id/scroll"
+    android:focusable="false"
+    android:focusableInTouchMode="false">
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,7 +19,9 @@
     android:id="@+id/MainLayout"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.joshua.bbcrwapp.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_main"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,7 +30,8 @@
         android:id="@+id/HTtextview"
         android:textStyle="bold"
         android:textSize="30sp"
-        android:textColor="#5783ea" />
+        android:textColor="#5783ea"
+        android:clickable="true" />
 
 
     <TextView

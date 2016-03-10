@@ -151,4 +151,5 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
    TODO 6. Add Page 2 text to page 2 button
    TODO 7. Create a Screenshot button that takes a screen of the current Activity
    TODO 8. Create Localizations
+   TODO 9. Find a way to save the state of the Second Activity
   */
