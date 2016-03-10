@@ -128,14 +128,14 @@
         android:id="@+id/Network_Table">
 
         <View
-            android:layout_width="match_parent"
+            android:layout_width="720dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="50dp"
             android:id="@+id/Separator2" />
 
         <View
-            android:layout_width="600dp"
+            android:layout_width="580dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="0dp"
@@ -148,13 +148,13 @@
             android:layout_x="139dp" />
 
         <View
-            android:layout_width="match_parent"
+            android:layout_width="720dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="90dp"
             android:id="@+id/Separator3" />
         <View
-            android:layout_width="match_parent"
+            android:layout_width="720dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="130dp"
@@ -167,16 +167,9 @@
             android:layout_y="-2dp"
             android:id="@+id/Separator5"
             android:layout_x="140dp" />
-        <View
-            android:layout_width="1dp"
-            android:layout_height="170dp"
-            android:background="@android:color/black"
-            android:layout_y="-2dp"
-            android:id="@+id/Separator7"
-            android:layout_x="735dp" />
 
         <View
-            android:layout_width="match_parent"
+            android:layout_width="720dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="167dp"
@@ -190,16 +183,16 @@
             android:layout_x="300dp" />
         <View
             android:layout_width="1dp"
-            android:layout_height="115dp"
+            android:layout_height="166dp"
             android:background="@android:color/black"
-            android:layout_y="51dp"
+            android:layout_y="0dp"
             android:id="@+id/Separator10"
             android:layout_x="450dp" />
         <View
             android:layout_width="1dp"
-            android:layout_height="115dp"
+            android:layout_height="166dp"
             android:background="@android:color/black"
-            android:layout_y="51dp"
+            android:layout_y="0dp"
             android:id="@+id/Separator11"
             android:layout_x="600dp" />
 
@@ -216,7 +209,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="159dp"
+            android:layout_width="149dp"
             android:layout_height="49dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="1-4"
@@ -228,12 +221,12 @@
             android:gravity="bottom|center" />
 
         <TextView
-            android:layout_width="150dp"
+            android:layout_width="149dp"
             android:layout_height="49dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="#of Devices 5-10"
             android:id="@+id/textView23"
-            android:layout_x="459dp"
+            android:layout_x="451dp"
             android:layout_y="1dp"
             android:gravity="center"
             android:background="#e89c70"
@@ -241,12 +234,12 @@
             android:textSize="20dp" />
 
         <TextView
-            android:layout_width="130dp"
+            android:layout_width="117dp"
             android:layout_height="49dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="10+"
             android:id="@+id/textView24"
-            android:layout_x="605dp"
+            android:layout_x="601dp"
             android:layout_y="1dp"
             android:gravity="bottom|center"
             android:background="#e89c70"
