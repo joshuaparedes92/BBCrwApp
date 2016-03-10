@@ -137,8 +137,6 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
     public void onGetNameClick(View view) {
         Intent getNameScreenIntent = new Intent(this, Main2Activity.class);
 
-        final int result = 1;
-
         startActivity(getNameScreenIntent);
     }
 

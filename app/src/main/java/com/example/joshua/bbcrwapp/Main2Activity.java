@@ -39,6 +39,7 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         findViewById(R.id.Size1).setOnClickListener(ColorChange);
         findViewById(R.id.Size2).setOnClickListener(ColorChange);
         findViewById(R.id.Size3).setOnClickListener(ColorChange);
@@ -74,23 +75,6 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
         findViewById(R.id.topRight).setOnDragListener(new MyDragListener());
         findViewById(R.id.bottomLeft).setOnDragListener(new MyDragListener());
         findViewById(R.id.bottomRight).setOnDragListener(new MyDragListener());
-
-        //Draggable Initialize
-        /*findViewById(R.id.textView3).setOnTouchListener(this);
-        findViewById(R.id.textView5).setOnTouchListener(this);
-        findViewById(R.id.textView6).setOnTouchListener(this);
-        findViewById(R.id.textView7).setOnTouchListener(this);
-        findViewById(R.id.textView8).setOnTouchListener(this);
-        findViewById(R.id.textView9).setOnTouchListener(this);
-        findViewById(R.id.textView10).setOnTouchListener(this);
-        findViewById(R.id.textView12).setOnTouchListener(this);
-        findViewById(R.id.textView13).setOnTouchListener(this);
-        findViewById(R.id.textView14).setOnTouchListener(this);
-        findViewById(R.id.textView15).setOnTouchListener(this);
-        findViewById(R.id.textView16).setOnTouchListener(this);
-        findViewById(R.id.textView17).setOnTouchListener(this);
-        findViewById(R.id.textView18).setOnTouchListener(this);
-        findViewById(R.id.textView19).setOnTouchListener(this);*/
 
 
         //YTM_Spinner1 Initialization
@@ -211,6 +195,7 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
         });
     }
 
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // On selecting a spinner item
@@ -221,31 +206,6 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-
-    /*boolean moving = false;
-    float x,y = 0.0f;
-    @Override
-    public boolean onTouch(View v, MotionEvent e){
-        switch(e.getAction()){
-            case MotionEvent.ACTION_DOWN:
-                moving= true;
-                v.getParent().requestDisallowInterceptTouchEvent(true);
-                break;
-            case MotionEvent.ACTION_MOVE:
-                if(moving){
-                    x= e.getRawX() - v.getWidth();
-                    y= e.getRawY() - v.getHeight()-700;
-                    v.setX(x);
-                    v.setY(y);
-                }
-                break;
-            case MotionEvent.ACTION_UP:
-                moving = false;
-                break;
-        }
-        return true;
-    }*/
-
 
      public final class MyTouchListener implements View.OnTouchListener{
          public boolean onTouch(View view, MotionEvent motionEvent){
@@ -312,18 +272,18 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
 
                 case R.id.Size2:
                 if(stateChanged2){
-                    v.setBackgroundColor(Color.GREEN);
-                }else{
                     v.setBackgroundColor(Color.parseColor("#9aaff4"));
+                }else{
+                    v.setBackgroundColor(Color.GREEN);
                 }
                 stateChanged2 = !stateChanged2;
                 break;
 
                 case R.id.Size3:
                     if(stateChanged3){
-                        v.setBackgroundColor(Color.GREEN);
-                    }else{
                         v.setBackgroundColor(Color.parseColor("#9aaff4"));
+                    }else{
+                        v.setBackgroundColor(Color.GREEN);
                     }
                     stateChanged3 = !stateChanged3;
                     break;
@@ -339,9 +299,9 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
 
                 case R.id.SecondCol2:
                     if(stateChanged5){
-                        v.setBackgroundColor(Color.GREEN);
-                    }else{
                         v.setBackgroundColor(Color.parseColor("#9aaff4"));
+                    }else{
+                        v.setBackgroundColor(Color.GREEN);
                     }
                     stateChanged5 = !stateChanged5;
                     break;
@@ -366,9 +326,9 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
 
                 case R.id.ThirdCol2:
                     if(stateChanged8){
-                        v.setBackgroundColor(Color.GREEN);
-                    }else{
                         v.setBackgroundColor(Color.parseColor("#9aaff4"));
+                    }else{
+                        v.setBackgroundColor(Color.GREEN);
                     }
                     stateChanged8 = !stateChanged8;
                     break;
@@ -393,9 +353,9 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
 
                 case R.id.FourthCol2:
                     if(stateChanged11){
-                        v.setBackgroundColor(Color.GREEN);
-                    }else{
                         v.setBackgroundColor(Color.parseColor("#9aaff4"));
+                    }else{
+                        v.setBackgroundColor(Color.GREEN);
                     }
                     stateChanged11 = !stateChanged11;
                     break;

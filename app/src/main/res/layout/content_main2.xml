@@ -337,7 +337,7 @@
             android:textColor="#000000" />
 
         <TextView
-            android:layout_width="134dp"
+            android:layout_width="117dp"
             android:layout_height="39dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="AC1200+"
@@ -442,7 +442,7 @@
             android:textColor="#000000" />
 
         <TextView
-            android:layout_width="134dp"
+            android:layout_width="117dp"
             android:layout_height="39dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="AC1900+"
@@ -457,7 +457,7 @@
             android:textColor="#000000" />
 
         <TextView
-            android:layout_width="134dp"
+            android:layout_width="117dp"
             android:layout_height="36dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="AC1900+"
@@ -504,55 +504,55 @@
             android:src="@drawable/tv_stand" />
 
         <View
-            android:layout_width="150dp"
+            android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="81dp"
-            android:layout_x="190dp"
+            android:layout_x="245dp"
             android:id="@+id/avLine1" />
 
         <View
-            android:layout_width="150dp"
+            android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="105dp"
-            android:layout_x="190dp"
+            android:layout_x="245dp"
             android:id="@+id/avLine2" />
         <View
-            android:layout_width="150dp"
+            android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="127dp"
-            android:layout_x="190dp"
+            android:layout_x="245dp"
             android:id="@+id/avLine3" />
         <View
-            android:layout_width="150dp"
+            android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="148dp"
-            android:layout_x="190dp"
+            android:layout_x="245dp"
             android:id="@+id/avLine4" />
         <View
-            android:layout_width="150dp"
+            android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="170dp"
-            android:layout_x="190dp"
+            android:layout_x="245dp"
             android:id="@+id/avLine5" />
         <View
-            android:layout_width="150dp"
+            android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="193dp"
-            android:layout_x="190dp"
+            android:layout_x="245dp"
             android:id="@+id/avLine6" />
 
         <View
-            android:layout_width="150dp"
+            android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="216dp"
-            android:layout_x="190dp"
+            android:layout_x="245dp"
             android:id="@+id/avLine16" />
 
         <CheckBox
@@ -574,53 +574,53 @@
             android:buttonTint="#5783ea" />
 
         <View
-            android:layout_width="150dp"
+            android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="357dp"
-            android:layout_x="230dp"
+            android:layout_x="220dp"
             android:id="@+id/avLine8" />
         <View
-            android:layout_width="150dp"
+            android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="379dp"
-            android:layout_x="230dp"
+            android:layout_x="220dp"
             android:id="@+id/avLine9" />
         <View
-            android:layout_width="150dp"
+            android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="400dp"
-            android:layout_x="230dp"
+            android:layout_x="220dp"
             android:id="@+id/avLine10" />
         <View
-            android:layout_width="150dp"
+            android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="424dp"
-            android:layout_x="230dp"
+            android:layout_x="220dp"
             android:id="@+id/avLine11" />
         <View
-            android:layout_width="150dp"
+            android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="450dp"
-            android:layout_x="230dp"
+            android:layout_x="220dp"
             android:id="@+id/avLine12" />
         <View
-            android:layout_width="150dp"
+            android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="470dp"
-            android:layout_x="230dp"
+            android:layout_x="220dp"
             android:id="@+id/avLine13" />
         <View
-            android:layout_width="150dp"
+            android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
             android:layout_y="490dp"
-            android:layout_x="230dp"
+            android:layout_x="220dp"
             android:id="@+id/avLine14" />
 
         <TextView
@@ -642,16 +642,17 @@
             android:ems="10"
             android:id="@+id/editText5"
             android:layout_x="72dp"
-            android:layout_y="570dp" />
+            android:layout_y="570dp"
+            android:maxLength="192" />
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="219dp"
+            android:layout_width="372dp"
             android:layout_height="230dp"
-            android:layout_x="154dp"
+            android:layout_x="0dp"
             android:layout_y="58dp"
             android:id="@+id/topLeft"
-            android:gravity="top|center"></LinearLayout>
+            android:gravity="top|right"></LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
@@ -852,11 +853,11 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="173dp"
+            android:layout_width="484dp"
             android:layout_height="218dp"
             android:layout_x="220dp"
             android:layout_y="333dp"
-            android:gravity="top|center"
+            android:gravity="top|left"
             android:id="@+id/bottomRight">
 
         </LinearLayout>
