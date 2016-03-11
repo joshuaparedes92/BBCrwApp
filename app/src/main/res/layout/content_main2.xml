@@ -48,7 +48,7 @@
             android:layout_height="31dp"
             android:id="@+id/YTM_spinner4"
             android:layout_x="578dp"
-            android:layout_y="60dp" />
+            android:layout_y="55dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -77,7 +77,7 @@
             android:layout_height="31dp"
             android:id="@+id/YTM_spinner3"
             android:layout_x="204dp"
-            android:layout_y="60dp" />
+            android:layout_y="55dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -95,14 +95,14 @@
             android:layout_height="31dp"
             android:id="@+id/YTM_spinner2"
             android:layout_x="562dp"
-            android:layout_y="30dp" />
+            android:layout_y="25dp" />
 
         <Spinner
             android:layout_width="130dp"
             android:layout_height="31dp"
             android:id="@+id/YTM_spinner1"
             android:layout_x="200dp"
-            android:layout_y="30dp" />
+            android:layout_y="25dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -478,7 +478,8 @@
         android:paddingTop="0dp"
         android:layout_below="@+id/Network_Table"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:background="@drawable/border">
 
         <TextView
             android:layout_width="wrap_content"
@@ -487,10 +488,11 @@
             android:text="@string/CRW2_TextView"
             android:id="@+id/textView"
             android:layout_x="0dp"
-            android:layout_y="20dp"
+            android:layout_y="10dp"
             android:textColor="#5783ea"
             android:textStyle="bold"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:paddingLeft="5dp" />
 
         <ImageView
             android:layout_width="200dp"
@@ -499,12 +501,19 @@
             android:layout_x="8dp"
             android:layout_y="42dp"
             android:src="@drawable/tv_stand" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#3a9ae9"
+            android:layout_y="285dp"
+            android:id="@+id/MidPoint"
+            android:color="#3a9ae9"/>
 
         <View
             android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="81dp"
+            android:layout_y="107dp"
             android:layout_x="245dp"
             android:id="@+id/avLine1" />
 
@@ -512,35 +521,35 @@
             android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="105dp"
+            android:layout_y="130dp"
             android:layout_x="245dp"
             android:id="@+id/avLine2" />
         <View
             android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="127dp"
+            android:layout_y="152dp"
             android:layout_x="245dp"
             android:id="@+id/avLine3" />
         <View
             android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="148dp"
+            android:layout_y="175dp"
             android:layout_x="245dp"
             android:id="@+id/avLine4" />
         <View
             android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="170dp"
+            android:layout_y="198dp"
             android:layout_x="245dp"
             android:id="@+id/avLine5" />
         <View
             android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="193dp"
+            android:layout_y="221dp"
             android:layout_x="245dp"
             android:id="@+id/avLine6" />
 
@@ -548,7 +557,7 @@
             android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="216dp"
+            android:layout_y="244dp"
             android:layout_x="245dp"
             android:id="@+id/avLine16" />
 
@@ -574,50 +583,58 @@
             android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="357dp"
-            android:layout_x="220dp"
+            android:layout_y="383dp"
+            android:layout_x="225dp"
             android:id="@+id/avLine8" />
         <View
             android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="379dp"
-            android:layout_x="220dp"
+            android:layout_y="404dp"
+            android:layout_x="225dp"
             android:id="@+id/avLine9" />
         <View
             android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="400dp"
-            android:layout_x="220dp"
+            android:layout_y="428dp"
+            android:layout_x="225dp"
             android:id="@+id/avLine10" />
         <View
             android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="424dp"
-            android:layout_x="220dp"
+            android:layout_y="450dp"
+            android:layout_x="225dp"
             android:id="@+id/avLine11" />
         <View
             android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="450dp"
-            android:layout_x="220dp"
+            android:layout_y="475dp"
+            android:layout_x="225dp"
             android:id="@+id/avLine12" />
         <View
             android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="470dp"
-            android:layout_x="220dp"
+            android:layout_y="497dp"
+            android:layout_x="225dp"
             android:id="@+id/avLine13" />
+
         <View
             android:layout_width="125dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            android:layout_y="490dp"
-            android:layout_x="220dp"
+            android:layout_y="543dp"
+            android:layout_x="225dp"
+            android:id="@+id/avLine15" />
+        <View
+            android:layout_width="125dp"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_y="520dp"
+            android:layout_x="225dp"
             android:id="@+id/avLine14" />
 
         <TextView
@@ -629,7 +646,8 @@
             android:textStyle="bold"
             android:textColor="#e54b4b"
             android:layout_marginBottom="10dp"
-            android:layout_y="570dp" />
+            android:layout_y="570dp"
+            android:paddingLeft="5dp" />
 
         <EditText
             android:layout_width="650dp"
@@ -649,7 +667,21 @@
             android:layout_x="0dp"
             android:layout_y="58dp"
             android:id="@+id/topLeft"
-            android:gravity="top|right"></LinearLayout>
+            android:gravity="top|right">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Your A/V Items"
+                android:id="@+id/textView28"
+                android:layout_x="244dp"
+                android:layout_y="45dp"
+                android:textStyle="bold"
+                android:textColor="#33ba4e"
+                android:padding="2dp"
+                android:layout_gravity="right" />
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
@@ -857,6 +889,17 @@
             android:gravity="top|left"
             android:id="@+id/bottomRight">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Your Network Items"
+                android:id="@+id/textView29"
+                android:layout_x="244dp"
+                android:layout_y="45dp"
+                android:textStyle="bold"
+                android:textColor="#33ba4e"
+                android:padding="2dp" />
         </LinearLayout>
 
         <ImageView
