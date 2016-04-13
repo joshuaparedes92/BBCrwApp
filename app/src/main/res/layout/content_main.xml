@@ -403,12 +403,13 @@
 
     <AbsoluteLayout
         android:layout_width="100dp"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
+        android:id="@+id/absoluteLayout"
+        android:layout_below="@+id/editText6"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignRight="@+id/editText6"
+        android:layout_alignEnd="@+id/editText6">
 
         <TextView
             android:layout_width="wrap_content"
@@ -421,7 +422,7 @@
             android:layout_toLeftOf="@+id/Question3checkBox6"
             android:layout_toStartOf="@+id/Question3checkBox6"
             android:layout_x="290dp"
-            android:layout_y="145dp"
+            android:layout_y="160dp"
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:nestedScrollingEnabled="false" />
@@ -439,6 +440,34 @@
             android:background="@drawable/abc_item_background_holo_dark"
             android:layout_x="471dp"
             android:layout_y="169dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="126dp"
+            android:id="@+id/imageView2"
+            android:layout_above="@+id/absoluteLayout"
+            android:src="@drawable/px_best_buy_logo"
+            android:layout_below="@+id/editText6"
+            android:layout_toLeftOf="@+id/Question6CheckBox3"
+            android:layout_toStartOf="@+id/Question6CheckBox3"
+            android:layout_x="265dp"
+            android:layout_y="26dp" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/imageView3"
+            android:src="@drawable/geek_squad_logo"
+            android:layout_x="80dp"
+            android:layout_y="15dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView4"
+            android:src="@drawable/magnolia"
+            android:layout_x="501dp"
+            android:layout_y="40dp" />
     </AbsoluteLayout>
 
 
