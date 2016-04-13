@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Best Buy CRW</string>
+    <string name="app_name">Best Buy Customer Recommendation Worksheet</string>
     <string name="action_settings">Settings</string>
     <string name="HomeTheaterTextView">Home Theater </string>
     <string name="CRWTextView">Customer Recommendation Worksheet</string>
@@ -22,5 +22,5 @@
     <string name="editText4_hint"><i>I recommend...</i> </string>
     <string name="CRW2_TextView">Use the space below to map out all of the devices that will be a part of your Home Theater Solution: <i><font fgcolor= "#FF669900">
         (You can Drap and Drop items)</font></i></string>
-    <string name="App_Info">Created by Joshua Paredes\n   Version 0.0.4 (Pre-Alpha)\n Last Updated 03/09/2016</string>
+    <string name="App_Info">Created by Joshua Paredes\n   Version 0.0.5 (Pre-Alpha)\n Last Updated 04/10/2016</string>
 </resources>
