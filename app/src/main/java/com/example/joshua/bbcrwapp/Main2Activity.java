@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main2Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
- {
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +99,7 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
 
         // attaching data adapter to spinner
         spinner1.setAdapter(dataAdapter);
-    /**********************************************************************************************/
+        /**********************************************************************************************/
 
         //YTM_Spinner2 Initialization
         //Spinner Element
@@ -207,50 +207,50 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
 
     }
 
-     public final class MyTouchListener implements View.OnTouchListener{
-         public boolean onTouch(View view, MotionEvent motionEvent){
-             if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-                 ClipData data = ClipData.newPlainText("", "");
-                 View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
-                 view.startDrag(data, shadowBuilder, view, 0);
-                 view.setVisibility(View.INVISIBLE);
-                 return true;
-             }else{
-                 return false;
-             }
-         }
-     }
+    public final class MyTouchListener implements View.OnTouchListener{
+        public boolean onTouch(View view, MotionEvent motionEvent){
+            if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                ClipData data = ClipData.newPlainText("", "");
+                View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
+                view.startDrag(data, shadowBuilder, view, 0);
+                view.setVisibility(View.INVISIBLE);
+                return true;
+            }else{
+                return false;
+            }
+        }
+    }
 
-     class MyDragListener implements View.OnDragListener {
-         @Override
-         public boolean onDrag(View v, DragEvent event) {
-             int action = event.getAction();
-             switch (event.getAction()){
-                 case DragEvent.ACTION_DRAG_STARTED:
-                     //do nothing
-                     break;
-                 case DragEvent.ACTION_DRAG_ENTERED:
-                     //do nothing
-                     break;
-                 case DragEvent.ACTION_DRAG_EXITED:
-                     //do nothing
-                     break;
-                 case DragEvent.ACTION_DROP:
-                     View view = (View) event.getLocalState();
-                     ViewGroup owner = (ViewGroup) view.getParent();
-                     owner.removeView(view);
-                     LinearLayout container = (LinearLayout) v;
-                     container.addView(view);
-                     view.setVisibility(View.VISIBLE);
-                     break;
-                 case DragEvent.ACTION_DRAG_ENDED:
-                     //do nothing
-                     default:
-                         break;
-             }
-             return true;
-         }
-     }
+    class MyDragListener implements View.OnDragListener {
+        @Override
+        public boolean onDrag(View v, DragEvent event) {
+            int action = event.getAction();
+            switch (event.getAction()){
+                case DragEvent.ACTION_DRAG_STARTED:
+                    //do nothing
+                    break;
+                case DragEvent.ACTION_DRAG_ENTERED:
+                    //do nothing
+                    break;
+                case DragEvent.ACTION_DRAG_EXITED:
+                    //do nothing
+                    break;
+                case DragEvent.ACTION_DROP:
+                    View view = (View) event.getLocalState();
+                    ViewGroup owner = (ViewGroup) view.getParent();
+                    owner.removeView(view);
+                    LinearLayout container = (LinearLayout) v;
+                    container.addView(view);
+                    view.setVisibility(View.VISIBLE);
+                    break;
+                case DragEvent.ACTION_DRAG_ENDED:
+                    //do nothing
+                default:
+                    break;
+            }
+            return true;
+        }
+    }
 
 
     private boolean stateChanged1, stateChanged2, stateChanged3, stateChanged4, stateChanged5;
@@ -271,13 +271,13 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
                     break;
 
                 case R.id.Size2:
-                if(stateChanged2){
-                    v.setBackgroundColor(Color.parseColor("#9aaff4"));
-                }else{
-                    v.setBackgroundColor(Color.YELLOW);
-                }
-                stateChanged2 = !stateChanged2;
-                break;
+                    if(stateChanged2){
+                        v.setBackgroundColor(Color.parseColor("#9aaff4"));
+                    }else{
+                        v.setBackgroundColor(Color.YELLOW);
+                    }
+                    stateChanged2 = !stateChanged2;
+                    break;
 
                 case R.id.Size3:
                     if(stateChanged3){
