@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -48,35 +49,19 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        final Activity activity = (MainActivity) this;
+
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                Date now = new Date();
-                android.text.format.DateFormat.format("yyyy-MM-dd_hh:mm:ss", now);
 
                 try {
                     // image naming and path  to include sd card  appending name you choose for file
-                    String mPath = Environment.getExternalStorageDirectory().toString() + "/" + now + ".jpg";
-
-                    // create bitmap screen capture
-                    View v1 = getWindow().getDecorView().getRootView();
-                    v1.setDrawingCacheEnabled(true);
-                    Bitmap bitmap = Bitmap.createBitmap(v1.getDrawingCache());
-                    v1.setDrawingCacheEnabled(false);
-
-                    File imageFile = new File(mPath);
-
-                    FileOutputStream outputStream = new FileOutputStream(imageFile);
-                    int quality = 100;
-                    bitmap.compress(Bitmap.CompressFormat.JPEG, quality, outputStream);
-                    outputStream.flush();
-                    outputStream.close();
-
-                    openScreenshot(imageFile);
-                    shareImage(imageFile);
+                    Bitmap bitmap = takeScreenShot(activity);
+                    saveBitmap(bitmap);
 
                 } catch (Throwable e) {
                     // Several error may come out with file handling or OOM
@@ -133,49 +118,56 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
 
     }
 
-    private static final int REQUEST_EXTERNAL_STORAGE = 1;
-    private static String[] PERMISSIONS_STORAGE = {
-            Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
-    };
 
-    /**
-     * Checks if the app has permission to write to device storage
-     *
-     * If the app does not has permission then the user will be prompted to grant permissions
-     *
-     * @param activity
-     */
-    public static void verifyStoragePermissions(Activity activity) {
-        // Check if we have write permission
-        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+    private static Bitmap takeScreenShot(Activity activity) {
+        View view = activity.getWindow().getDecorView();
+        view.setDrawingCacheEnabled(true);
+        view.buildDrawingCache();
+        Bitmap b1 = view.getDrawingCache();
+        Rect frame = new Rect();
+        activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+        int statusBarHeight = frame.top;
+        int width = activity.getWindowManager().getDefaultDisplay().getWidth();
+        int height = activity.getWindowManager().getDefaultDisplay()
+                .getHeight();
 
-        if (permission != PackageManager.PERMISSION_GRANTED) {
-            // We don't have permission so prompt the user
-            ActivityCompat.requestPermissions(
-                    activity,
-                    PERMISSIONS_STORAGE,
-                    REQUEST_EXTERNAL_STORAGE
-            );
+        Bitmap b = Bitmap.createBitmap(b1, 0, statusBarHeight, width, height
+                - statusBarHeight);
+        view.destroyDrawingCache();
+        Log.e("Screenshot", "taken successfully");
+        return b;
+    }
+
+    private void saveBitmap(Bitmap bitmap) {
+        Date now = new Date();
+        File imagePath = new File(Environment.getExternalStorageDirectory().toString() + "/" + now + ".jpg");
+        FileOutputStream fos;
+        try {
+            fos = new FileOutputStream(imagePath);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            Log.e("Screenshot", "saved successfully");
+
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            Log.e("GREC", e.getMessage(), e);
+        } catch (IOException e) {
+            Log.e("GREC", e.getMessage(), e);
         }
+        shareImage(imagePath);
     }
 
-    private void openScreenshot(File imageFile) {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        Uri uri = Uri.fromFile(imageFile);
-        intent.setDataAndType(uri, "image/*");
-        startActivity(intent);
-    }
 
-    private void shareImage(File file){
-        Uri uri = Uri.fromFile(file);
+    private void shareImage(File imagefile){
+        Uri uri = Uri.fromFile(imagefile);
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_SEND);
         intent.setType("image/*");
 
-        intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "");
-        intent.putExtra(android.content.Intent.EXTRA_TEXT, "");
+        intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Customer Recommendation Worksheet");
+        intent.putExtra(android.content.Intent.EXTRA_TEXT, "Here is your customized Recommendation worksheet." +
+                "When you come to the store next time please provide this sheet to an associate to help" +
+                "streamline the checkout process!");
         intent.putExtra(Intent.EXTRA_STREAM, uri);
         startActivity(Intent.createChooser(intent, "Share Screenshot"));
     }
