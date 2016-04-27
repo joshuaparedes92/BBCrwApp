@@ -13,6 +13,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,7 +27,9 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,16 +43,16 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();}
-
-
-            });
+                        .setAction("Action", null).show();
+                Bitmap bitmap = takeScreenshot();
+                saveBitmap(bitmap);
+            }
+        });
 
 
 
@@ -99,6 +102,26 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
 
     }
 
+    public Bitmap takeScreenshot() {
+        View rootView = findViewById(android.R.id.content).getRootView();
+        rootView.setDrawingCacheEnabled(true);
+        return rootView.getDrawingCache();
+    }
+
+    public void saveBitmap(Bitmap bitmap) {
+        File imagePath = new File(Environment.getExternalStorageDirectory() + "/screenshot.png");
+        FileOutputStream fos;
+        try {
+            fos = new FileOutputStream(imagePath);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            Log.e("GREC", e.getMessage(), e);
+        } catch (IOException e) {
+            Log.e("GREC", e.getMessage(), e);
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
