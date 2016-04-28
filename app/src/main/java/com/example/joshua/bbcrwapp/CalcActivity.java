@@ -7,14 +7,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class CalcActivity extends AppCompatActivity {
+public class CalcActivity extends MainActivity {
+
+    private int price, twoCost, fiveCost, bpSix, bpTwelve, bpTwentyFour, total;
+    private int protectionCost;
+    private double tax= .09;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calc);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -25,5 +28,8 @@ public class CalcActivity extends AppCompatActivity {
             }
         });
     }
+
+//**************************************FUNCTIONS**************************************************
+
 
 }
