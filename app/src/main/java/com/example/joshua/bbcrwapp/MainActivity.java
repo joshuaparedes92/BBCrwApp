@@ -30,6 +30,7 @@
         import java.io.FileNotFoundException;
         import java.io.FileOutputStream;
         import java.io.IOException;
+        import java.net.URI;
         import java.util.ArrayList;
         import java.util.Date;
         import java.util.List;
@@ -148,6 +149,11 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
 
                 if(position == 2){
                     Intent intent = new Intent(MainActivity.this, CalcActivity.class);
+                    startActivity(intent);
+                }
+                if(position == 3){
+                    Uri uri= Uri.parse("http://www.bestbuy.com");
+                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                     startActivity(intent);
                 }
             }
