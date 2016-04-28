@@ -20,9 +20,10 @@
     <string name="YTM_TextView2">Current Internet Speed <i>(Mb/s)</i> </string>
     <string name="YTM_TextView4">Max Speed of current router <i>(Mb/s)</i></string>
     <string name="editText4_hint"><i>I recommend...</i> </string>
-    <string name="CRW2_TextView">Use the space below to map out all of the devices that will be a part of your Home Theater Solution: <i><font fgcolor= "#FF669900">
+    <string name="CRW2_TextView">Use the space below to map out all of the devices that will be a part of your Home Theater Solution: <i><font fgcolor="#FF669900">
         (You can Drap and Drop items)</font></i></string>
     <string name="App_Info">Created by Joshua Paredes\n   Version 0.0.5 (Pre-Alpha)\n Last Updated 04/10/2016</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+    <string name="title_activity_calc">Calculators</string>
 </resources>
