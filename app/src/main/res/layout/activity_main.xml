@@ -8,6 +8,7 @@
     android:id="@+id/MainContent"
     tools:context="com.example.joshua.bbcrwapp.MainActivity">
 
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
