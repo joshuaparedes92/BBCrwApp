@@ -1,37 +1,38 @@
-package com.example.joshua.bbcrwapp;
+
+        package com.example.joshua.bbcrwapp;
 
 
-import android.app.Activity;
-import android.content.Intent;
-import android.content.res.Configuration;
-import android.graphics.Bitmap;
-import android.graphics.Rect;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Environment;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Spinner;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.Toast;
+        import android.app.Activity;
+        import android.content.Intent;
+        import android.content.res.Configuration;
+        import android.graphics.Bitmap;
+        import android.graphics.Rect;
+        import android.net.Uri;
+        import android.os.Bundle;
+        import android.os.Environment;
+        import android.support.design.widget.FloatingActionButton;
+        import android.support.design.widget.Snackbar;
+        import android.support.v4.widget.DrawerLayout;
+        import android.support.v7.app.ActionBarActivity;
+        import android.support.v7.widget.Toolbar;
+        import android.util.Log;
+        import android.view.View;
+        import android.view.Menu;
+        import android.view.MenuItem;
+        import android.widget.AdapterView;
+        import android.widget.ArrayAdapter;
+        import android.widget.ListView;
+        import android.widget.Spinner;
+        import android.widget.AdapterView.OnItemSelectedListener;
+        import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+        import java.io.File;
+        import java.io.FileNotFoundException;
+        import java.io.FileOutputStream;
+        import java.io.IOException;
+        import java.util.ArrayList;
+        import java.util.Date;
+        import java.util.List;
 
 public class MainActivity extends ActionBarActivity implements OnItemSelectedListener {
 
@@ -133,8 +134,22 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
         mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                int itemposition= position;
                 String value= (String) mDrawerList.getItemAtPosition(position);
+
+                if(position == 0){
+                    Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+
+                if(position == 1){
+                    Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                    startActivity(intent);
+                }
+
+                if(position == 2){
+                    Intent intent = new Intent(MainActivity.this, CalcActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }
