@@ -1,10 +1,16 @@
 package com.example.joshua.bbcrwapp;
 
+import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipDescription;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -26,7 +32,12 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Main2Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
@@ -38,6 +49,8 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        final Activity activity = (Main2Activity) this;
 
 
         findViewById(R.id.Size1).setOnClickListener(ColorChange);
@@ -189,10 +202,72 @@ public class Main2Activity extends AppCompatActivity implements AdapterView.OnIt
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Sharing...", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                try {
+                    // image naming and path  to include sd card  appending name you choose for file
+                    Bitmap bitmap = takeScreenShot(activity);
+                    saveBitmap(bitmap);
+
+                } catch (Throwable e) {
+                    // Several error may come out with file handling or OOM
+                    e.printStackTrace();
+                }
             }
         });
+    }
+
+    private static Bitmap takeScreenShot(Activity activity) {
+        View view = activity.getWindow().getDecorView();
+        view.setDrawingCacheEnabled(true);
+        view.buildDrawingCache();
+        Bitmap b1 = view.getDrawingCache();
+        Rect frame = new Rect();
+        activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+        int statusBarHeight = frame.top;
+        int width = activity.getWindowManager().getDefaultDisplay().getWidth();
+        int height = activity.getWindowManager().getDefaultDisplay()
+                .getHeight();
+
+        Bitmap b = Bitmap.createBitmap(b1, 0, statusBarHeight, width, height
+                - statusBarHeight);
+        view.destroyDrawingCache();
+        Log.e("Screenshot", "taken successfully");
+        return b;
+    }
+
+    private void saveBitmap(Bitmap bitmap) {
+        Date now = new Date();
+        File imagePath = new File(Environment.getExternalStorageDirectory().toString() + "/" + now + "Pg2.jpg");
+        FileOutputStream fos;
+        try {
+            fos = new FileOutputStream(imagePath);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            Log.e("Screenshot", "saved successfully");
+
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            Log.e("GREC", e.getMessage(), e);
+        } catch (IOException e) {
+            Log.e("GREC", e.getMessage(), e);
+        }
+        shareImage(imagePath);
+    }
+
+
+    private void shareImage(File imagefile){
+        Uri uri = Uri.fromFile(imagefile);
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_SEND);
+        intent.setType("image/*");
+
+        intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Customer Recommendation Worksheet");
+        intent.putExtra(android.content.Intent.EXTRA_TEXT, "Here is your customized Recommendation worksheet." +
+                "When you come to the store next time please provide this sheet to an associate to help" +
+                "streamline the checkout process!");
+        intent.putExtra(Intent.EXTRA_STREAM, uri);
+        startActivity(Intent.createChooser(intent, "Share Screenshot"));
     }
 
 
