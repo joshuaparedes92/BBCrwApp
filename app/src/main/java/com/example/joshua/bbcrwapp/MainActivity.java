@@ -36,11 +36,11 @@
 
 public class MainActivity extends ActionBarActivity implements OnItemSelectedListener {
 
-    private ListView mDrawerList;
-    private ArrayAdapter<String> mAdapter;
-    private android.support.v7.app.ActionBarDrawerToggle mDrawerToggle;
-    private DrawerLayout mDrawerLayout;
-    private String mActivityTitle;
+    public ListView mDrawerList;
+    public ArrayAdapter<String> mAdapter;
+    public android.support.v7.app.ActionBarDrawerToggle mDrawerToggle;
+    public DrawerLayout mDrawerLayout;
+    public String mActivityTitle;
 
 
     @Override
@@ -127,7 +127,7 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
 
     } //END OF onCreate
 
-    private void addDrawerItems(){
+    public void addDrawerItems(){
         String[] NavArray = { "Main Page", "Technology Map", "Calculators", "BestBuy.com"};
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, NavArray);
         mDrawerList.setAdapter(mAdapter);
@@ -154,7 +154,7 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
         });
     }
 
-    private void setupDrawer() {
+    public void setupDrawer() {
         mDrawerToggle = new android.support.v7.app.ActionBarDrawerToggle(this, mDrawerLayout,
                 R.string.drawer_open, R.string.drawer_close) {
 
