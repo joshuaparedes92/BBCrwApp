@@ -138,7 +138,7 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
         // attaching data adapter to spinner
         spinner2.setAdapter(dataAdapter2);
 
-    }
+    } //END OF onCreate
 
     private void addDrawerItems(){
         String[] osArray = { "Android", "iOS", "Windows", "OS X", "Linux" };
@@ -182,6 +182,52 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
     }
 
 
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+        // On selecting a spinner item
+        String item = parent.getItemAtPosition(position).toString();
+    }
+
+    public void onNothingSelected(AdapterView<?> arg0) {
+        // TODO Auto-generated method stub
+    }
+
+    //This is going to be the Intent to Switch to the Second Activity
+    public void onGetNameClick(View view) {
+        Intent getNameScreenIntent = new Intent(this, Main2Activity.class);
+
+        startActivity(getNameScreenIntent);
+    }
 
     private static Bitmap takeScreenShot(Activity activity) {
         View view = activity.getWindow().getDecorView();
@@ -236,60 +282,4 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
         startActivity(Intent.createChooser(intent, "Share Screenshot"));
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        if (mDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-        // On selecting a spinner item
-        String item = parent.getItemAtPosition(position).toString();
-    }
-
-    public void onNothingSelected(AdapterView<?> arg0) {
-        // TODO Auto-generated method stub
-    }
-
-    //This is going to be the Intent to Switch to the Second Activity
-    public void onGetNameClick(View view) {
-        Intent getNameScreenIntent = new Intent(this, Main2Activity.class);
-
-        startActivity(getNameScreenIntent);
-    }
-
 }
-
-/* TODO Prepare for Alpha release
-   TODO 1. Fix TV Stand image in content_main2.xml
-   TODO 2. Create String Resources for various TextFields
-   TODO 3. Add more cable companies to YTM_Spinner 1
-   TODO 4. Program FAB button to open up Gmail
-   TODO 5. Create an Icon for the program
-   TODO 6. Add Page 2 text to page 2 button
-   TODO 7. Create a Screenshot button that takes a screen of the current Activity
-   TODO 8. Create Localizations
-   TODO 9. Find a way to save the state of the Second Activity
-  */
