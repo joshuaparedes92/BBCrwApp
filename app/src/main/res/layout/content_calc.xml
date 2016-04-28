@@ -12,4 +12,189 @@
     tools:context="com.example.joshua.bbcrwapp.CalcActivity"
     tools:showIn="@layout/activity_calc">
 
+    <EditText
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/price"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="Please Enter Product Price"
+        android:textColorHint="#467636"
+        android:textSize="20dp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Geek Squad Protection"
+        android:id="@+id/gspTitle"
+        android:textColor="#f76114"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:textIsSelectable="true"
+        android:layout_below="@+id/price"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="44dp"
+        android:paddingBottom="10dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2 Year"
+        android:id="@+id/checkBox2Year"
+        android:layout_below="@+id/gspTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="20dp"
+        android:checked="false"
+        android:buttonTint="#f76114" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5 year"
+        android:id="@+id/checkBox5Year"
+        android:textSize="20dp"
+        android:checked="false"
+        android:buttonTint="#f76114"
+        android:layout_below="@+id/checkBox2Year"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="37dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/twoYearCost"
+        android:layout_above="@+id/checkBox5Year"
+        android:layout_toRightOf="@+id/checkBox5Year"
+        android:layout_toEndOf="@+id/checkBox5Year"
+        android:hint="Cost"
+        android:textAlignment="center"
+        android:textStyle="italic" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/fiveYearCost"
+        android:layout_alignBottom="@+id/checkBox5Year"
+        android:layout_toRightOf="@+id/checkBox5Year"
+        android:layout_toEndOf="@+id/checkBox5Year"
+        android:hint="Cost"
+        android:textAlignment="center"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Best Buy Credit Card"
+        android:id="@+id/bpTitle"
+        android:layout_below="@+id/checkBox5Year"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="35dp"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:textColor="#0b72b0" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Six Months"
+        android:id="@+id/sixMonthTitle"
+        android:layout_below="@+id/bpTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="31dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Twelve Months"
+        android:id="@+id/twelveMonthTitle"
+        android:layout_alignTop="@+id/sixMonthTitle"
+        android:layout_toRightOf="@+id/price"
+        android:layout_toEndOf="@+id/price" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Twenty-four Months"
+        android:id="@+id/twofourTitle"
+        android:layout_marginRight="55dp"
+        android:layout_marginEnd="55dp"
+        android:layout_alignTop="@+id/twelveMonthTitle"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textView21"
+        android:text="temp"
+        android:layout_below="@+id/sixMonthTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="31dp" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textView30"
+        android:text="temp"
+        android:layout_alignBottom="@+id/textView21"
+        android:layout_toRightOf="@+id/price"
+        android:layout_toEndOf="@+id/price" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textView31"
+        android:text="temp"
+        android:layout_alignBottom="@+id/textView30"
+        android:layout_alignLeft="@+id/twofourTitle"
+        android:layout_alignStart="@+id/twofourTitle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Total Cost"
+        android:id="@+id/textView32"
+        android:textColor="#36ad29"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:textIsSelectable="true"
+        android:layout_marginTop="91dp"
+        android:paddingBottom="10dp"
+        android:layout_below="@+id/textView21"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText5"
+        android:layout_below="@+id/textView32"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>
