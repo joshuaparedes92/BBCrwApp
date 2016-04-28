@@ -23,6 +23,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.Toast;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -125,9 +127,16 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
     } //END OF onCreate
 
     private void addDrawerItems(){
-        String[] osArray = { "Android", "iOS", "Windows", "OS X", "Linux" };
-        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
+        String[] NavArray = { "Main Page", "Technology Map", "Calculators", "BestBuy.com"};
+        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, NavArray);
         mDrawerList.setAdapter(mAdapter);
+        mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int itemposition= position;
+                String value= (String) mDrawerList.getItemAtPosition(position);
+            }
+        });
     }
 
     private void setupDrawer() {
