@@ -40,7 +40,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Main2Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
+public class Main2Activity extends MainActivity implements AdapterView.OnItemSelectedListener
 {
 
     @Override
