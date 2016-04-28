@@ -1,37 +1,27 @@
 package com.example.joshua.bbcrwapp;
-
 import android.app.Activity;
 import android.content.ClipData;
-import android.content.ClipDescription;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Rect;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsoluteLayout;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.FrameLayout;
-import android.widget.GridView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -42,15 +32,12 @@ import java.util.List;
 
 public class Main2Activity extends MainActivity implements AdapterView.OnItemSelectedListener
 {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        final Activity activity = (Main2Activity) this;
+        final Activity activity = this;
 
 
         findViewById(R.id.Size1).setOnClickListener(ColorChange);
