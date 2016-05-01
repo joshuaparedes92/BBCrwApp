@@ -110,7 +110,7 @@ public class CalcActivity extends MainActivity {
 
 //**************************************FUNCTIONS**************************************************
 
-    //TODO: Implement Functions to calculate GSP cost, Branded Payment Breakdown, Total Cost.
+    //TODO: Implement Functions to calculate GSP cost, Total Cost.
 
 
 @Override
