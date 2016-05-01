@@ -59,7 +59,7 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
         getSupportActionBar().setHomeButtonEnabled(true);
 //*************************End of Drawer Squence Initialization************************************
 
-        final Activity activity = (MainActivity) this;
+        final Activity activity =  this;
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -240,7 +240,7 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
         startActivity(getNameScreenIntent);
     }
 
-    private static Bitmap takeScreenShot(Activity activity) {
+    static Bitmap takeScreenShot(Activity activity) {
         View view = activity.getWindow().getDecorView();
         view.setDrawingCacheEnabled(true);
         view.buildDrawingCache();
@@ -259,7 +259,7 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
         return b;
     }
 
-    private void saveBitmap(Bitmap bitmap) {
+    void saveBitmap(Bitmap bitmap) {
         Date now = new Date();
         File imagePath = new File(Environment.getExternalStorageDirectory().toString() + "/" + now + ".jpg");
         FileOutputStream fos;

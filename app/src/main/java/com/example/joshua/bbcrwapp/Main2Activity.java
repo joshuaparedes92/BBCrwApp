@@ -40,7 +40,6 @@ public class Main2Activity extends MainActivity implements AdapterView.OnItemSel
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        final Activity activity = this;
 
         //TODO: Adjust spinners layouts.
         //TODO: Add more spinner elements.
@@ -200,7 +199,7 @@ public class Main2Activity extends MainActivity implements AdapterView.OnItemSel
         // attaching data adapter to spinner
         spinner4.setAdapter(dataAdapter4);
         /******************************************************************************************/
-
+        final Activity activity = this;
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -258,59 +257,6 @@ public class Main2Activity extends MainActivity implements AdapterView.OnItemSel
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    private static Bitmap takeScreenShot(Activity activity) {
-        View view = activity.getWindow().getDecorView();
-        view.setDrawingCacheEnabled(true);
-        view.buildDrawingCache();
-        Bitmap b1 = view.getDrawingCache();
-        Rect frame = new Rect();
-        activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
-        int statusBarHeight = frame.top;
-        int width = activity.getWindowManager().getDefaultDisplay().getWidth();
-        int height = activity.getWindowManager().getDefaultDisplay()
-                .getHeight();
-
-        Bitmap b = Bitmap.createBitmap(b1, 0, statusBarHeight, width, height
-                - statusBarHeight);
-        view.destroyDrawingCache();
-        Log.e("Screenshot", "taken successfully");
-        return b;
-    }
-
-    private void saveBitmap(Bitmap bitmap) {
-        Date now = new Date();
-        File imagePath = new File(Environment.getExternalStorageDirectory().toString() + "/" + now + "Pg2.jpg");
-        FileOutputStream fos;
-        try {
-            fos = new FileOutputStream(imagePath);
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
-            Log.e("Screenshot", "saved successfully");
-
-            fos.flush();
-            fos.close();
-        } catch (FileNotFoundException e) {
-            Log.e("GREC", e.getMessage(), e);
-        } catch (IOException e) {
-            Log.e("GREC", e.getMessage(), e);
-        }
-        shareImage(imagePath);
-    }
-
-
-    private void shareImage(File imagefile){
-        Uri uri = Uri.fromFile(imagefile);
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_SEND);
-        intent.setType("image/*");
-
-        intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Customer Recommendation Worksheet");
-        intent.putExtra(android.content.Intent.EXTRA_TEXT, "Here is your customized Recommendation worksheet." +
-                "When you come to the store next time please provide this sheet to an associate to help" +
-                "streamline the checkout process!");
-        intent.putExtra(Intent.EXTRA_STREAM, uri);
-        startActivity(Intent.createChooser(intent, "Share Screenshot"));
     }
 
 
