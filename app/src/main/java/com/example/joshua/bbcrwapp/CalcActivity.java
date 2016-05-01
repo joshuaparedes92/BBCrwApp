@@ -9,24 +9,64 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class CalcActivity extends MainActivity {
+    String price;
 
     //TODO: See if you can make this page look better.
 
-    private int price, twoCost, fiveCost, bpSix, bpTwelve, bpTwentyFour, total;
-    private int protectionCost;
-    private double tax= .09;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        TextView sixC = (TextView) findViewById(R.id.sixCost);
+
+
+        TextView twelveC = (TextView) findViewById(R.id.twelveCost);
+        final TextView TfourC= (TextView) findViewById(R.id.twentyfourCost);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calc);
 
+        final EditText pr = (EditText) findViewById(R.id.price);
+        pr.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    // Perform action on key press
+                    double p = Double.parseDouble(pr.getText().toString());
+                    //price = Double.toString(BpCost(p)); //working!
+                    return true;
+                }
+                return false;
+            }
+        });
+/*
+        EditText twoY = (EditText) findViewById(R.id.twoYearCost);
+        String twoYear = twoY.getText().toString();
+
+        EditText fiveY = (EditText) findViewById(R.id.fiveYearCost);
+        String  fiveYear= fiveY.getText().toString();
+*/
+
+
+/*
+        TextView twelveC = (TextView) findViewById(R.id.twelveCost);
+        String  twelveCost = twelveC.getText().toString();
+
+        TextView TfourC= (TextView) findViewById(R.id.twentyfourCost);
+        String twentyfourCost = TfourC.getText().toString();
+*/
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mDrawerList = (ListView)findViewById(R.id.navList);
@@ -36,7 +76,6 @@ public class CalcActivity extends MainActivity {
         setupDrawer();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-
 
         final Activity activity = this;
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -58,11 +97,30 @@ public class CalcActivity extends MainActivity {
         });
     }
 
+    private double BpCalc(double price) {
+        double BpCost;
+
+        //TODO: Insert Try-catch block here for when user enters a value less than 199.99
+
+        if( price<=399.99 && price > 199.99){
+            BpCost = price/6;
+            return BpCost;
+        }
+        else if (price>=400 && price< 799.99){
+            BpCost = price/12;
+            return BpCost;
+        }
+        else{
+            BpCost = price/24;
+            return BpCost;
+        }
+    }
 
 
 //**************************************FUNCTIONS**************************************************
 
     //TODO: Implement Functions to calculate GSP cost, Branded Payment Breakdown, Total Cost.
+
 
 @Override
 protected void onPostCreate(Bundle savedInstanceState) {
