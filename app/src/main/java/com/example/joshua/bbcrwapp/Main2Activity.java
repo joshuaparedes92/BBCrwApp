@@ -42,6 +42,9 @@ public class Main2Activity extends MainActivity implements AdapterView.OnItemSel
 
         final Activity activity = this;
 
+        //TODO: Adjust spinners layouts.
+        //TODO: Add more spinner elements.
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mDrawerList = (ListView)findViewById(R.id.navList);
@@ -217,6 +220,7 @@ public class Main2Activity extends MainActivity implements AdapterView.OnItemSel
         });
     }
 
+//*************************************FUNCTIONS***************************************************
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -320,6 +324,7 @@ public class Main2Activity extends MainActivity implements AdapterView.OnItemSel
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+    //TODO: Try to make grid elements round instead of square in order to make the grid look more appealing.
 
     public final class MyTouchListener implements View.OnTouchListener{
         public boolean onTouch(View view, MotionEvent motionEvent){

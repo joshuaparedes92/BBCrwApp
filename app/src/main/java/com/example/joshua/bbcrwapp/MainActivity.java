@@ -230,7 +230,7 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
     }
 
     public void onNothingSelected(AdapterView<?> arg0) {
-        // TODO Auto-generated method stub
+
     }
 
     //This is going to be the Intent to Switch to the Second Activity
