@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 public class CalcActivity extends MainActivity {
     //TODO: See if you can make this page look better.
+    //TODO: Something is wrong with the checkboxes. Fix them.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
