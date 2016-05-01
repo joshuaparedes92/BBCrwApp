@@ -32,6 +32,8 @@
 public class MainActivity extends ActionBarActivity implements OnItemSelectedListener {
 
     //TODO: Create Activities for the "About APP", and "Help" sections.
+    //TODO: Fix up strings.xml
+    //TODO: Try to make the app look a little bit more lively.
 
     public ListView mDrawerList;
     public ArrayAdapter<String> mAdapter;
