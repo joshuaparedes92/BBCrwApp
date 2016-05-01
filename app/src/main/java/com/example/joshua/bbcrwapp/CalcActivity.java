@@ -1,6 +1,8 @@
 package com.example.joshua.bbcrwapp;
 
+import android.app.Activity;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -35,13 +37,23 @@ public class CalcActivity extends MainActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        //TODO: Implement this share button.
+
+        final Activity activity = this;
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Sharing...", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                try {
+                    // image naming and path  to include sd card  appending name you choose for file
+                    Bitmap bitmap = takeScreenShot(activity);
+                    saveBitmap(bitmap);
+
+                } catch (Throwable e) {
+                    // Several error may come out with file handling or OOM
+                    e.printStackTrace();
+                }
             }
         });
     }
