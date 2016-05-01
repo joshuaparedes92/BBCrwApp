@@ -20,19 +20,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class CalcActivity extends MainActivity {
-    String price;
-
     //TODO: See if you can make this page look better.
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        TextView sixC = (TextView) findViewById(R.id.sixCost);
-
-
-        TextView twelveC = (TextView) findViewById(R.id.twelveCost);
-        final TextView TfourC= (TextView) findViewById(R.id.twentyfourCost);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calc);
@@ -45,13 +36,17 @@ public class CalcActivity extends MainActivity {
                         (keyCode == KeyEvent.KEYCODE_ENTER)) {
                     // Perform action on key press
                     double p = Double.parseDouble(pr.getText().toString());
-                    //price = Double.toString(BpCost(p)); //working!
+                    BpCalc(p);
                     return true;
                 }
                 return false;
             }
         });
 /*
+
+        TextView sixC = (TextView) findViewById(R.id.sixCost);
+        sixC.setText(ccPrice);
+
         EditText twoY = (EditText) findViewById(R.id.twoYearCost);
         String twoYear = twoY.getText().toString();
 
@@ -61,10 +56,10 @@ public class CalcActivity extends MainActivity {
 
 
 /*
-        TextView twelveC = (TextView) findViewById(R.id.twelveCost);
+
         String  twelveCost = twelveC.getText().toString();
 
-        TextView TfourC= (TextView) findViewById(R.id.twentyfourCost);
+
         String twentyfourCost = TfourC.getText().toString();
 */
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -97,23 +92,28 @@ public class CalcActivity extends MainActivity {
         });
     }
 
-    private double BpCalc(double price) {
-        double BpCost;
+    private void BpCalc(double price) {
+        double bpPrice1, bpPrice2 = 0, bpPrice3 = 0;
+        TextView sixC = (TextView) findViewById(R.id.sixCost);
+        TextView twelveC = (TextView) findViewById(R.id.twelveCost);
+        TextView TfourC= (TextView) findViewById(R.id.twentyfourCost);
 
         //TODO: Insert Try-catch block here for when user enters a value less than 199.99
 
         if( price<=399.99 && price > 199.99){
-            BpCost = price/6;
-            return BpCost;
+            bpPrice1 = Math.round((price/6)*100.0)/100.0;
+            String bp1 = Double.toString(bpPrice1);
+            sixC.setText(bp1);
         }
-        else if (price>=400 && price< 799.99){
-            BpCost = price/12;
-            return BpCost;
+       /* else if (price>199.99 && price< 799.99){
+
+
         }
         else{
-            BpCost = price/24;
-            return BpCost;
-        }
+
+
+        }*/
+        return;
     }
 
 
