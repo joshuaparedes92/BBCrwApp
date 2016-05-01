@@ -14,6 +14,8 @@ import android.widget.ListView;
 
 public class CalcActivity extends MainActivity {
 
+    //TODO: See if you can make this page look better.
+
     private int price, twoCost, fiveCost, bpSix, bpTwelve, bpTwentyFour, total;
     private int protectionCost;
     private double tax= .09;
@@ -33,7 +35,7 @@ public class CalcActivity extends MainActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-
+        //TODO: Implement this share button.
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +46,12 @@ public class CalcActivity extends MainActivity {
         });
     }
 
+
+
 //**************************************FUNCTIONS**************************************************
+
+    //TODO: Implement Functions to calculate GSP cost, Branded Payment Breakdown, Total Cost.
+
 @Override
 protected void onPostCreate(Bundle savedInstanceState) {
     super.onPostCreate(savedInstanceState);

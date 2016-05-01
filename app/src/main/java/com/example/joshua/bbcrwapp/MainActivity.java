@@ -1,7 +1,4 @@
-
-        package com.example.joshua.bbcrwapp;
-
-
+ package com.example.joshua.bbcrwapp;
         import android.app.Activity;
         import android.content.Intent;
         import android.content.res.Configuration;
@@ -24,18 +21,17 @@
         import android.widget.ListView;
         import android.widget.Spinner;
         import android.widget.AdapterView.OnItemSelectedListener;
-        import android.widget.Toast;
-
         import java.io.File;
         import java.io.FileNotFoundException;
         import java.io.FileOutputStream;
         import java.io.IOException;
-        import java.net.URI;
         import java.util.ArrayList;
         import java.util.Date;
         import java.util.List;
 
 public class MainActivity extends ActionBarActivity implements OnItemSelectedListener {
+
+    //TODO: Create Activities for the "About APP", and "Help" sections.
 
     public ListView mDrawerList;
     public ArrayAdapter<String> mAdapter;
@@ -129,7 +125,10 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
     } //END OF onCreate
 
     public void addDrawerItems(){
+        //TODO: Implement "About APP" & "Help" tabs.
+        //TODO: Add icons to drawer tabs.
         String[] NavArray = { "Main Page", "Technology Map", "Calculators", "BestBuy.com"};
+
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, NavArray);
         mDrawerList.setAdapter(mAdapter);
         mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -284,6 +283,7 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
         intent.setAction(Intent.ACTION_SEND);
         intent.setType("image/*");
 
+        //TODO: Fix this text up. Make it seem more professional.
         intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Customer Recommendation Worksheet");
         intent.putExtra(android.content.Intent.EXTRA_TEXT, "Here is your customized Recommendation worksheet." +
                 "When you come to the store next time please provide this sheet to an associate to help" +
