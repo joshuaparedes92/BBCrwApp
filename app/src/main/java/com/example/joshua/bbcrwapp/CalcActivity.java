@@ -42,26 +42,7 @@ public class CalcActivity extends MainActivity {
                 return false;
             }
         });
-/*
 
-        TextView sixC = (TextView) findViewById(R.id.sixCost);
-        sixC.setText(ccPrice);
-
-        EditText twoY = (EditText) findViewById(R.id.twoYearCost);
-        String twoYear = twoY.getText().toString();
-
-        EditText fiveY = (EditText) findViewById(R.id.fiveYearCost);
-        String  fiveYear= fiveY.getText().toString();
-*/
-
-
-/*
-
-        String  twelveCost = twelveC.getText().toString();
-
-
-        String twentyfourCost = TfourC.getText().toString();
-*/
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mDrawerList = (ListView)findViewById(R.id.navList);
@@ -105,15 +86,25 @@ public class CalcActivity extends MainActivity {
             String bp1 = Double.toString(bpPrice1);
             sixC.setText(bp1);
         }
-       /* else if (price>199.99 && price< 799.99){
-
-
+        else if (price>=400.00 && price< 799.99){
+            bpPrice1 = Math.round((price/6)*100.0)/100.0;
+            bpPrice2 = Math.round((price/12)*100.0)/100.0;
+            String bp1 = Double.toString(bpPrice1);
+            String bp2 = Double.toString(bpPrice2);
+            sixC.setText(bp1);
+            twelveC.setText(bp2);
         }
         else{
-
-
-        }*/
-        return;
+            bpPrice1 = Math.round((price/6)*100.0)/100.0;
+            bpPrice2 = Math.round((price/12)*100.0)/100.0;
+            bpPrice3 = Math.round((price/24)*100.0)/100.0;
+            String bp1 = Double.toString(bpPrice1);
+            String bp2 = Double.toString(bpPrice2);
+            String bp3 = Double.toString(bpPrice3);
+            sixC.setText(bp1);
+            twelveC.setText(bp2);
+            TfourC.setText(bp3);
+        }
     }
 
 
