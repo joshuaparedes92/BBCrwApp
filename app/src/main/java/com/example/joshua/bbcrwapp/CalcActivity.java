@@ -91,7 +91,7 @@ public class CalcActivity extends MainActivity {
         TextView twelveC = (TextView) findViewById(R.id.twelveCost);
         TextView TfourC= (TextView) findViewById(R.id.twentyfourCost);
 
-        //TODO: Insert Try-catch block here for when user enters a value less than 199.99
+        //TODO: Use resource strings with placeholder's for localization purposes.
 
         if( price<=399.99 && price > 199.99){
             bpPrice1 = Math.round((price/6)*100.0)/100.0;
