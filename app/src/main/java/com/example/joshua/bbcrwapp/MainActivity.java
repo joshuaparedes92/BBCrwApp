@@ -233,13 +233,6 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
 
     }
 
-    //This is going to be the Intent to Switch to the Second Activity
-    public void onGetNameClick(View view) {
-        Intent getNameScreenIntent = new Intent(this, Main2Activity.class);
-
-        startActivity(getNameScreenIntent);
-    }
-
     static Bitmap takeScreenShot(Activity activity) {
         View view = activity.getWindow().getDecorView();
         view.setDrawingCacheEnabled(true);
