@@ -57,7 +57,7 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
         setupDrawer();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-//*************************End of Drawer Squence Initialization************************************
+//*************************End of Drawer Sequence Initialization************************************
 
         final Activity activity =  this;
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
