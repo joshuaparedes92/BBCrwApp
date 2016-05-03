@@ -65,9 +65,7 @@
         android:layout_alignParentStart="true"
         android:textSize="20dp"
         android:checked="false"
-        android:buttonTint="#f76114"
-        android:focusable="true"
-        android:focusableInTouchMode="true" />
+        android:buttonTint="#f76114" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -80,9 +78,7 @@
         android:layout_below="@+id/checkBox2Year"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="37dp"
-        android:focusable="true"
-        android:focusableInTouchMode="true" />
+        android:layout_marginTop="37dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -225,17 +221,18 @@
         android:focusable="true"
         android:focusableInTouchMode="true" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText5"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30dp"
+        android:text="Large Text"
+        android:id="@+id/totalCost"
         android:layout_below="@+id/textView32"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:focusable="true"
-        android:focusableInTouchMode="true" />
+        android:layout_marginTop="31dp"
+        android:inputType="numberDecimal" />
 
 </RelativeLayout>
     <ListView
