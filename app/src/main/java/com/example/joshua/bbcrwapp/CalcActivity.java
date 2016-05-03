@@ -10,6 +10,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -45,7 +47,8 @@ public class CalcActivity extends MainActivity {
                     // a message telling the user they need to enter a number.
                     try {
                         double p = Double.parseDouble(pr.getText().toString());
-                        BpCalc(p);
+                        gspCalc(p);
+                        totalCalc(p);
                         return true;
                     } catch (Throwable e){
                         Toast.makeText(getApplicationContext(), "Please enter a number", Toast.LENGTH_LONG).show();
@@ -86,7 +89,11 @@ public class CalcActivity extends MainActivity {
         });
     }
 
-    private void BpCalc(double price) {
+    private void gspCalc(double p) {
+
+    }
+
+    private void totalCalc(double price) {
         double bpPrice1, bpPrice2, bpPrice3;
         TextView sixC = (TextView) findViewById(R.id.sixCost);
         TextView twelveC = (TextView) findViewById(R.id.twelveCost);
@@ -134,10 +141,11 @@ public class CalcActivity extends MainActivity {
 
         tax = price *.09;
 
-        grandTotal = Double.toString(Math.round((price + tax)*100.0)/100.0) ;
+        grandTotal = Double.toString(Math.round((price + tax)*100.0)/100.0);
 
-        grandT.setText("$" +grandTotal);
+        grandT.setText("$" + grandTotal);
         grandT.setTextColor(Color.GREEN);
+
     }
 
 
