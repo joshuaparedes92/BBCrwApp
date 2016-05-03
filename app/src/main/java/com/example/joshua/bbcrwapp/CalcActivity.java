@@ -41,7 +41,8 @@ public class CalcActivity extends MainActivity {
 
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
                         (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    // Perform action on key press
+                    // Perform action on key press. If the user enters null the program prints
+                    // a message telling the user they need to enter a number.
                     try {
                         double p = Double.parseDouble(pr.getText().toString());
                         BpCalc(p);
