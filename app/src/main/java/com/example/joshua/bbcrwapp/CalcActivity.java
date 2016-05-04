@@ -18,6 +18,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -41,6 +42,14 @@ public class CalcActivity extends MainActivity {
         final CheckBox twoYearBox = (CheckBox) findViewById(R.id.checkBox2Year);
         final CheckBox fiveYearBox = (CheckBox) findViewById(R.id.checkBox5Year);
         final EditText pr = (EditText) findViewById(R.id.price);
+
+        /*double [] gspPricetwo = {14.99, 19.99, 24.99, 29.99,39.99,49.99,59.99,69.99,69.99, 79.99
+                                ,99.99,119.99,129.99,149.99,169.99,179.99,199.99,229.99,279.99,349.99,399.99};
+        double [] gspPriceFive = {24.99, 29.99,39.99,49.99,59.99,69.99,79.99,89.99,99.99,119.99,149.99,
+                                  179.99,199.99,219.99,249.99,299.99,329.99,369.99,399.99,499.99,599.99,
+                                  699.99,799.99,999.99,1199.99,1499.99,1699.99,2099.99,2499.99,3899.99,
+                                   5499.99};
+        */
         pr.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -51,10 +60,10 @@ public class CalcActivity extends MainActivity {
                     // a message telling the user they need to enter a number.
                     try {
                         double p = Double.parseDouble(pr.getText().toString());
-                        double gspPrice =  gspCalc(p, twoYearBox, fiveYearBox);
-                        totalCalc(p, gspPrice);
+                        double price = gspCalc(p, twoYearBox, fiveYearBox);
+                        totalCalc(price);
                         return true;
-                    } catch (Throwable e){
+                    } catch (Throwable e) {
                         Toast.makeText(getApplicationContext(), "Please enter a number", Toast.LENGTH_LONG).show();
                         e.printStackTrace();
                     }
@@ -91,14 +100,25 @@ public class CalcActivity extends MainActivity {
                 }
             }
         });
+
+        final Button refresh = (Button) findViewById(R.id.button);
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double p = Double.parseDouble(pr.getText().toString());
+                double price = gspCalc(p, twoYearBox, fiveYearBox);
+                totalCalc(price);
+            }
+        });
     }
 
  //**************************************FUNCTIONS**************************************************
 
     @SuppressLint("SetTextI18n")
-    private double gspCalc(double price, CheckBox twoyear, CheckBox fiveYear) {
-        double gspPriceTwo;
+    private double gspCalc(double price, final CheckBox twoyear, CheckBox fiveYear) {
+        final double gspPriceTwo;
         double gspPriceFive;
+
 
         TextView twoYearPrice = (TextView) findViewById(R.id.twoYearText);
         TextView fiveYearPrice = (TextView) findViewById(R.id.fiveYearText);
@@ -109,9 +129,12 @@ public class CalcActivity extends MainActivity {
         TextView twoPerDay = (TextView) findViewById(R.id.twoYearPerDay);
         TextView fivePerDay = (TextView) findViewById(R.id.fiveYearPerDay);
 
+
+
         if(price > 0.00 && price <= 99.99 ){
             gspPriceTwo = 14.99;
             gspPriceFive = 24.99;
+
             twoYearPrice.setText("$" + Double.toString(Math.round((gspPriceTwo) * 100.0) / 100.0));
             fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
             twoPerYear.setText("$" + Double.toString(Math.round((gspPriceTwo / 2) * 100.0) / 100.0));
@@ -119,7 +142,18 @@ public class CalcActivity extends MainActivity {
             twoPerMonth.setText("$" + Double.toString(Math.round((gspPriceTwo/12/2) * 100.0) / 100.0));
             fivePerMonth.setText("$" + Double.toString(Math.round((gspPriceFive/12/5) * 100.0) / 100.0));
             twoPerDay.setText("$" + Double.toString(Math.round((gspPriceTwo/365/2) * 100.0) / 100.0));
-            fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive/365/5) * 100.0) / 100.0));
+            fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
+
+
+
+            if (twoyear.isChecked()){
+                return price + gspPriceTwo;
+            }
+            else if(fiveYear.isChecked()){
+                return price + gspPriceFive;
+            }
+
+
         }
         else if(price >= 100.00 && price <= 149.99 ) {
             gspPriceTwo = 19.99;
@@ -289,9 +323,9 @@ public class CalcActivity extends MainActivity {
             twoPerDay.setText("$" + Double.toString(Math.round((gspPriceTwo / 365 / 2) * 100.0) / 100.0));
             fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
         }
-        else if(price >= 1000.00 && price <= 1199.99 ) {
-            gspPriceTwo = 149.99;
-            gspPriceFive = 249.99;
+        else if(price >= 1200.00 && price <= 1399.99 ) {
+            gspPriceTwo = 169.99;
+            gspPriceFive = 299.99;
             twoYearPrice.setText("$" + Double.toString(Math.round((gspPriceTwo) * 100.0) / 100.0));
             fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
             twoPerYear.setText("$" + Double.toString(Math.round((gspPriceTwo / 2) * 100.0) / 100.0));
@@ -301,9 +335,9 @@ public class CalcActivity extends MainActivity {
             twoPerDay.setText("$" + Double.toString(Math.round((gspPriceTwo / 365 / 2) * 100.0) / 100.0));
             fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
         }
-        else if(price >= 1000.00 && price <= 1199.99 ) {
-            gspPriceTwo = 149.99;
-            gspPriceFive = 249.99;
+        else if(price >= 1400.00 && price <= 1599.99 ) {
+            gspPriceTwo = 179.99;
+            gspPriceFive = 329.99;
             twoYearPrice.setText("$" + Double.toString(Math.round((gspPriceTwo) * 100.0) / 100.0));
             fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
             twoPerYear.setText("$" + Double.toString(Math.round((gspPriceTwo / 2) * 100.0) / 100.0));
@@ -313,11 +347,169 @@ public class CalcActivity extends MainActivity {
             twoPerDay.setText("$" + Double.toString(Math.round((gspPriceTwo / 365 / 2) * 100.0) / 100.0));
             fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
         }
-
+        else if(price >= 1600.00 && price <= 1799.99 ) {
+            gspPriceTwo = 199.99;
+            gspPriceFive = 369.99;
+            twoYearPrice.setText("$" + Double.toString(Math.round((gspPriceTwo) * 100.0) / 100.0));
+            fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
+            twoPerYear.setText("$" + Double.toString(Math.round((gspPriceTwo / 2) * 100.0) / 100.0));
+            fivePerYear.setText("$" + Double.toString(Math.round((gspPriceFive / 5) * 100.0) / 100.0));
+            twoPerMonth.setText("$" + Double.toString(Math.round((gspPriceTwo / 12 / 2) * 100.0) / 100.0));
+            fivePerMonth.setText("$" + Double.toString(Math.round((gspPriceFive / 12 / 5) * 100.0) / 100.0));
+            twoPerDay.setText("$" + Double.toString(Math.round((gspPriceTwo / 365 / 2) * 100.0) / 100.0));
+            fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
+        }
+        else if(price >= 1800.00 && price <= 1999.99 ) {
+            gspPriceTwo = 229.99;
+            gspPriceFive = 399.99;
+            twoYearPrice.setText("$" + Double.toString(Math.round((gspPriceTwo) * 100.0) / 100.0));
+            fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
+            twoPerYear.setText("$" + Double.toString(Math.round((gspPriceTwo / 2) * 100.0) / 100.0));
+            fivePerYear.setText("$" + Double.toString(Math.round((gspPriceFive / 5) * 100.0) / 100.0));
+            twoPerMonth.setText("$" + Double.toString(Math.round((gspPriceTwo / 12 / 2) * 100.0) / 100.0));
+            fivePerMonth.setText("$" + Double.toString(Math.round((gspPriceFive / 12 / 5) * 100.0) / 100.0));
+            twoPerDay.setText("$" + Double.toString(Math.round((gspPriceTwo / 365 / 2) * 100.0) / 100.0));
+            fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
+        }
+        else if(price >= 2000.00 && price <= 2499.99 ) {
+            gspPriceTwo = 279.99;
+            gspPriceFive = 499.99;
+            twoYearPrice.setText("$" + Double.toString(Math.round((gspPriceTwo) * 100.0) / 100.0));
+            fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
+            twoPerYear.setText("$" + Double.toString(Math.round((gspPriceTwo / 2) * 100.0) / 100.0));
+            fivePerYear.setText("$" + Double.toString(Math.round((gspPriceFive / 5) * 100.0) / 100.0));
+            twoPerMonth.setText("$" + Double.toString(Math.round((gspPriceTwo / 12 / 2) * 100.0) / 100.0));
+            fivePerMonth.setText("$" + Double.toString(Math.round((gspPriceFive / 12 / 5) * 100.0) / 100.0));
+            twoPerDay.setText("$" + Double.toString(Math.round((gspPriceTwo / 365 / 2) * 100.0) / 100.0));
+            fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
+        }
+        else if(price >= 2500.00 && price <= 2999.99 ) {
+            gspPriceTwo = 349.99;
+            gspPriceFive = 599.99;
+            twoYearPrice.setText("$" + Double.toString(Math.round((gspPriceTwo) * 100.0) / 100.0));
+            fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
+            twoPerYear.setText("$" + Double.toString(Math.round((gspPriceTwo / 2) * 100.0) / 100.0));
+            fivePerYear.setText("$" + Double.toString(Math.round((gspPriceFive / 5) * 100.0) / 100.0));
+            twoPerMonth.setText("$" + Double.toString(Math.round((gspPriceTwo / 12 / 2) * 100.0) / 100.0));
+            fivePerMonth.setText("$" + Double.toString(Math.round((gspPriceFive / 12 / 5) * 100.0) / 100.0));
+            twoPerDay.setText("$" + Double.toString(Math.round((gspPriceTwo / 365 / 2) * 100.0) / 100.0));
+            fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
+        }
+        else if(price >= 3000.00 && price <= 3499.99 ) {
+            gspPriceTwo = 399.99;
+            gspPriceFive = 699.99;
+            twoYearPrice.setText("$" + Double.toString(Math.round((gspPriceTwo) * 100.0) / 100.0));
+            fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
+            twoPerYear.setText("$" + Double.toString(Math.round((gspPriceTwo / 2) * 100.0) / 100.0));
+            fivePerYear.setText("$" + Double.toString(Math.round((gspPriceFive / 5) * 100.0) / 100.0));
+            twoPerMonth.setText("$" + Double.toString(Math.round((gspPriceTwo / 12 / 2) * 100.0) / 100.0));
+            fivePerMonth.setText("$" + Double.toString(Math.round((gspPriceFive / 12 / 5) * 100.0) / 100.0));
+            twoPerDay.setText("$" + Double.toString(Math.round((gspPriceTwo / 365 / 2) * 100.0) / 100.0));
+            fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
+        }
+        else if(price >= 3500.00 && price <= 3999.99 ) {
+            gspPriceFive = 799.99;
+            twoYearPrice.setText("N/A");
+            fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
+            twoPerYear.setText("N/A");
+            fivePerYear.setText("$" + Double.toString(Math.round((gspPriceFive / 5) * 100.0) / 100.0));
+            twoPerMonth.setText("N/A");
+            fivePerMonth.setText("$" + Double.toString(Math.round((gspPriceFive / 12 / 5) * 100.0) / 100.0));
+            twoPerDay.setText("N/A");
+            fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
+        }
+        else if(price >= 4000.00 && price <= 4999.99 ) {
+            gspPriceFive = 999.99;
+            twoYearPrice.setText("N/A");
+            fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
+            twoPerYear.setText("N/A");
+            fivePerYear.setText("$" + Double.toString(Math.round((gspPriceFive / 5) * 100.0) / 100.0));
+            twoPerMonth.setText("N/A");
+            fivePerMonth.setText("$" + Double.toString(Math.round((gspPriceFive / 12 / 5) * 100.0) / 100.0));
+            twoPerDay.setText("N/A");
+            fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
+        }
+        else if(price >= 5000.00 && price <= 7499.99 ) {
+            gspPriceFive = 1199.99;
+            twoYearPrice.setText("N/A");
+            fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
+            twoPerYear.setText("N/A");
+            fivePerYear.setText("$" + Double.toString(Math.round((gspPriceFive / 5) * 100.0) / 100.0));
+            twoPerMonth.setText("N/A");
+            fivePerMonth.setText("$" + Double.toString(Math.round((gspPriceFive / 12 / 5) * 100.0) / 100.0));
+            twoPerDay.setText("N/A");
+            fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
+        }
+        else if(price >= 7500.00 && price <= 9999.99 ) {
+            gspPriceFive = 1499.99;
+            twoYearPrice.setText("N/A");
+            fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
+            twoPerYear.setText("N/A");
+            fivePerYear.setText("$" + Double.toString(Math.round((gspPriceFive / 5) * 100.0) / 100.0));
+            twoPerMonth.setText("N/A");
+            fivePerMonth.setText("$" + Double.toString(Math.round((gspPriceFive / 12 / 5) * 100.0) / 100.0));
+            twoPerDay.setText("N/A");
+            fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
+        }
+        else if(price >= 10000.00 && price <= 14999.99 ) {
+            gspPriceFive = 1699.99;
+            twoYearPrice.setText("N/A");
+            fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
+            twoPerYear.setText("N/A");
+            fivePerYear.setText("$" + Double.toString(Math.round((gspPriceFive / 5) * 100.0) / 100.0));
+            twoPerMonth.setText("N/A");
+            fivePerMonth.setText("$" + Double.toString(Math.round((gspPriceFive / 12 / 5) * 100.0) / 100.0));
+            twoPerDay.setText("N/A");
+            fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
+        }
+        else if(price >= 15000.00 && price <= 19999.99 ) {
+            gspPriceFive = 2099.99;
+            twoYearPrice.setText("N/A");
+            fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
+            twoPerYear.setText("N/A");
+            fivePerYear.setText("$" + Double.toString(Math.round((gspPriceFive / 5) * 100.0) / 100.0));
+            twoPerMonth.setText("N/A");
+            fivePerMonth.setText("$" + Double.toString(Math.round((gspPriceFive / 12 / 5) * 100.0) / 100.0));
+            twoPerDay.setText("N/A");
+            fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
+        }
+        else if(price >= 20000.00 && price <= 24999.99 ) {
+            gspPriceFive = 2499.99;
+            twoYearPrice.setText("N/A");
+            fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
+            twoPerYear.setText("N/A");
+            fivePerYear.setText("$" + Double.toString(Math.round((gspPriceFive / 5) * 100.0) / 100.0));
+            twoPerMonth.setText("N/A");
+            fivePerMonth.setText("$" + Double.toString(Math.round((gspPriceFive / 12 / 5) * 100.0) / 100.0));
+            twoPerDay.setText("N/A");
+            fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
+        }
+        else if(price >= 25000.00 && price <= 49999.99 ) {
+            gspPriceFive = 3899.99;
+            twoYearPrice.setText("N/A");
+            fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
+            twoPerYear.setText("N/A");
+            fivePerYear.setText("$" + Double.toString(Math.round((gspPriceFive / 5) * 100.0) / 100.0));
+            twoPerMonth.setText("N/A");
+            fivePerMonth.setText("$" + Double.toString(Math.round((gspPriceFive / 12 / 5) * 100.0) / 100.0));
+            twoPerDay.setText("N/A");
+            fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
+        }
+        else{
+            gspPriceFive = 5499.99;
+            twoYearPrice.setText("N/A");
+            fiveYearPrice.setText("$" + Double.toString(Math.round((gspPriceFive) * 100.0) / 100.0));
+            twoPerYear.setText("N/A");
+            fivePerYear.setText("$" + Double.toString(Math.round((gspPriceFive / 5) * 100.0) / 100.0));
+            twoPerMonth.setText("N/A");
+            fivePerMonth.setText("$" + Double.toString(Math.round((gspPriceFive / 12 / 5) * 100.0) / 100.0));
+            twoPerDay.setText("N/A");
+            fivePerDay.setText("$" + Double.toString(Math.round((gspPriceFive / 365 / 5) * 100.0) / 100.0));
+        }
         return price;
     }
 
-    private void totalCalc(double price, double gspPrice) {
+    private void totalCalc(double price) {
         double bpPrice1, bpPrice2, bpPrice3;
         TextView sixC = (TextView) findViewById(R.id.sixCost);
         TextView twelveC = (TextView) findViewById(R.id.twelveCost);
