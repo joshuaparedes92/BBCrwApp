@@ -66,7 +66,7 @@ public class CalcActivity extends MainActivity {
                         Calc(p, twoYearBox, fiveYearBox);
                         return true;
                     } catch (Throwable e) {
-                        Toast.makeText(getApplicationContext(), "Please enter a number", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Please enter a price.", Toast.LENGTH_LONG).show();
                         e.printStackTrace();
                     }
                 }
@@ -78,9 +78,14 @@ public class CalcActivity extends MainActivity {
         refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double p = Double.parseDouble(pr.getText().toString());
-                Calc(p, twoYearBox, fiveYearBox);
-
+                try {
+                    double p = Double.parseDouble(pr.getText().toString());
+                    Calc(p, twoYearBox, fiveYearBox);
+                } catch (Throwable e){
+                    Toast.makeText(getApplicationContext(), "There is nothing to calculate.",
+                            Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                }
             }
         });
 
