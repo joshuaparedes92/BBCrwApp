@@ -36,7 +36,8 @@
         android:textStyle="italic"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:editable="false" />
+        android:editable="false"
+        android:layout_marginBottom="30dp" />
 
     <View
         android:layout_width="160dp"
@@ -44,9 +45,10 @@
         android:background="@android:color/black"
         android:layout_y="50dp"
         android:id="@+id/Separator1"
-        android:layout_below="@+id/totalCost"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/totalCost"
+        android:layout_toEndOf="@+id/totalCost"
+        android:layout_marginBottom="77dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -58,24 +60,23 @@
         android:textStyle="bold"
         android:textSize="30dp"
         android:textIsSelectable="true"
-        android:layout_below="@+id/price"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="44dp"
         android:focusable="true"
-        android:focusableInTouchMode="true" />
+        android:focusableInTouchMode="true"
+        android:layout_below="@+id/price"
+        android:layout_toLeftOf="@+id/twofourTitle"
+        android:layout_toStartOf="@+id/twofourTitle" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2 Year"
         android:id="@+id/checkBox2Year"
-        android:layout_below="@+id/gspTitle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:textSize="20dp"
         android:checked="false"
-        android:buttonTint="#f76114" />
+        android:buttonTint="#f76114"
+        android:layout_below="@+id/gspTitle"
+        android:layout_toRightOf="@+id/totalCost"
+        android:layout_toEndOf="@+id/totalCost" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -85,10 +86,9 @@
         android:textSize="20dp"
         android:checked="false"
         android:buttonTint="#f76114"
-        android:layout_below="@+id/checkBox2Year"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="37dp" />
+        android:layout_below="@+id/gspTitle"
+        android:layout_alignLeft="@+id/twofourTitle"
+        android:layout_alignStart="@+id/twofourTitle" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -96,15 +96,15 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Best Buy Credit Card"
         android:id="@+id/bpTitle"
-        android:layout_below="@+id/checkBox5Year"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="35dp"
         android:textStyle="bold"
         android:textSize="30dp"
         android:textColor="#0b72b0"
         android:focusable="true"
-        android:focusableInTouchMode="true" />
+        android:focusableInTouchMode="true"
+        android:layout_above="@+id/twelveMonthTitle"
+        android:layout_alignLeft="@+id/gspTitle"
+        android:layout_alignStart="@+id/gspTitle"
+        android:layout_marginBottom="55dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -112,12 +112,12 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Six Months"
         android:id="@+id/sixMonthTitle"
-        android:layout_below="@+id/bpTitle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="31dp"
         android:focusable="true"
-        android:focusableInTouchMode="true" />
+        android:focusableInTouchMode="true"
+        android:layout_marginBottom="40dp"
+        android:layout_above="@+id/sixCost"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -151,12 +151,12 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/sixCost"
         android:text="temp"
-        android:layout_below="@+id/sixMonthTitle"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_above="@+id/textView32"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="31dp"
-        android:focusable="true"
-        android:focusableInTouchMode="true" />
+        android:layout_marginBottom="54dp" />
 
     <TextView
         android:layout_width="150dp"
@@ -192,19 +192,19 @@
         android:textStyle="bold"
         android:textSize="30dp"
         android:textIsSelectable="true"
-        android:layout_marginTop="91dp"
-        android:layout_below="@+id/sixCost"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_above="@+id/Separator1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:focusable="true"
-        android:focusableInTouchMode="true" />
+        android:layout_marginBottom="44dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="30dp"
-        android:text="Large Text"
+        android:text=""
         android:id="@+id/totalCost"
         android:layout_below="@+id/textView32"
         android:layout_alignParentLeft="true"
@@ -216,21 +216,88 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
+        android:text="GSP Price"
         android:id="@+id/twoYearText"
-        android:layout_above="@+id/checkBox5Year"
-        android:layout_toRightOf="@+id/textView32"
-        android:layout_toEndOf="@+id/textView32" />
+        android:layout_below="@+id/checkBox2Year"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="44dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
+        android:text="GSP Price"
         android:id="@+id/fiveYearText"
-        android:layout_above="@+id/bpTitle"
-        android:layout_alignLeft="@+id/twoYearText"
-        android:layout_alignStart="@+id/twoYearText" />
+        android:layout_alignTop="@+id/twoYearText"
+        android:layout_alignRight="@+id/checkBox5Year"
+        android:layout_alignEnd="@+id/checkBox5Year" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Per Year"
+        android:id="@+id/twoYearPerYear"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/twoYearText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Per Year"
+        android:id="@+id/fiveYearPerYear"
+        android:layout_below="@+id/fiveYearText"
+        android:layout_alignLeft="@+id/fiveYearText"
+        android:layout_alignStart="@+id/fiveYearText"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Per Month"
+        android:id="@+id/twoYearPerMonth"
+        android:layout_below="@+id/twoYearPerYear"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Per Day"
+        android:id="@+id/twoYearPerDay"
+        android:layout_below="@+id/twoYearPerMonth"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Per Month"
+        android:id="@+id/fiveYearPerMonth"
+        android:layout_below="@+id/fiveYearPerYear"
+        android:layout_alignLeft="@+id/fiveYearPerYear"
+        android:layout_alignStart="@+id/fiveYearPerYear"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Per Day"
+        android:id="@+id/fiveYearPerDay"
+        android:layout_below="@+id/fiveYearPerMonth"
+        android:layout_alignLeft="@+id/fiveYearPerMonth"
+        android:layout_alignStart="@+id/fiveYearPerMonth"
+        android:layout_marginTop="30dp" />
 
 </RelativeLayout>
     <ListView
