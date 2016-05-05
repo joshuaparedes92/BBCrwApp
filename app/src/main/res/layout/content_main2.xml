@@ -95,18 +95,18 @@
             android:id="@+id/YTM_TextView2"
             android:layout_marginRight="5dp"
             android:textSize="15dp"
-            android:layout_x="346dp"
+            android:layout_x="380dp"
             android:layout_y="30dp" />
 
         <Spinner
             android:layout_width="125dp"
             android:layout_height="31dp"
             android:id="@+id/YTM_spinner2"
-            android:layout_x="562dp"
-            android:layout_y="25dp" />
+            android:layout_x="582dp"
+            android:layout_y="20dp" />
 
         <Spinner
-            android:layout_width="130dp"
+            android:layout_width="170dp"
             android:layout_height="31dp"
             android:id="@+id/YTM_spinner1"
             android:layout_x="200dp"
