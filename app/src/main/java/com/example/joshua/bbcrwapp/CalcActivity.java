@@ -777,11 +777,6 @@ public class CalcActivity extends MainActivity {
     }
 
 
-
-
-    //TODO: Implement Functions to calculate GSP cost, Total Cost.
-
-
 @Override
 protected void onPostCreate(Bundle savedInstanceState) {
     super.onPostCreate(savedInstanceState);
