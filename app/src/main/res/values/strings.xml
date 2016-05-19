@@ -26,4 +26,5 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="title_activity_calc">Calculators</string>
+    <string name="title_activity_about_me">AboutMeActivity</string>
 </resources>

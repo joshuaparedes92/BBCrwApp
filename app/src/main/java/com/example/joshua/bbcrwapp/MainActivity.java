@@ -129,7 +129,7 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
     public void addDrawerItems(){
         //TODO: Implement "About APP" & "Help" tabs.
         //TODO: Add icons to drawer tabs.
-        String[] NavArray = { "Main Page", "Technology Map", "Calculators", "BestBuy.com"};
+        String[] NavArray = { "Main Page", "Technology Map", "Calculators", "BestBuy.com", "About Me"};
 
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, NavArray);
         mDrawerList.setAdapter(mAdapter);

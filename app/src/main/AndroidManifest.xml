@@ -38,7 +38,10 @@
             android:name=".CalcActivity"
             android:label="@string/title_activity_calc"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AboutMeActivity"></activity>
+        <activity
+            android:name=".AboutMeActivity"
+            android:label="@string/title_activity_about_me"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
