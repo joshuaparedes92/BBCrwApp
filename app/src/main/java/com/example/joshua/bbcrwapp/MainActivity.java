@@ -157,6 +157,10 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
                     Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                     startActivity(intent);
                 }
+                if(position == 4){
+                    Intent intent = new Intent(MainActivity.this, AboutMeActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }
