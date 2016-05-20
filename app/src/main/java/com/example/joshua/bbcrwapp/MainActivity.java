@@ -129,7 +129,7 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
     public void addDrawerItems(){
         //TODO: Implement "About APP" & "Help" tabs.
         //TODO: Add icons to drawer tabs.
-        String[] NavArray = { "Main Page", "Technology Map", "Calculators", "BestBuy.com", "About Me"};
+        String[] NavArray = { "Main Page", "Technology Map", "Calculators", "Survey", "BestBuy.com"};
 
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, NavArray);
         mDrawerList.setAdapter(mAdapter);
@@ -153,12 +153,13 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
                     startActivity(intent);
                 }
                 if(position == 3){
-                    Uri uri= Uri.parse("http://www.bestbuy.com");
-                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                    Intent intent = new Intent(MainActivity.this, AboutMeActivity.class);
                     startActivity(intent);
+
                 }
                 if(position == 4){
-                    Intent intent = new Intent(MainActivity.this, AboutMeActivity.class);
+                    Uri uri= Uri.parse("http://www.bestbuy.com");
+                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                     startActivity(intent);
                 }
             }
