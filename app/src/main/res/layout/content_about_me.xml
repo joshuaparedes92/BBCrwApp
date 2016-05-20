@@ -23,10 +23,64 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/App_Info"
+        android:text="@string/Survey_Text"
         android:id="@+id/textView37"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="77dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/editText5"
+        android:layout_marginTop="141dp"
+        android:layout_below="@+id/textView37"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/editText7"
+        android:layout_alignTop="@+id/editText5"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="131dp"
+        android:layout_marginEnd="131dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Employee Name"
+        android:id="@+id/textView38"
+        android:layout_above="@+id/editText7"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="20dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#2c81cb" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Department"
+        android:id="@+id/textView39"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_alignBottom="@+id/textView38"
+        android:layout_alignLeft="@+id/editText7"
+        android:layout_alignStart="@+id/editText7"
+        android:textColor="#2c81cb" />
 </RelativeLayout>
     <ListView
         android:id="@+id/navList"
