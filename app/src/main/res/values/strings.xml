@@ -26,5 +26,15 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="title_activity_calc">Calculators</string>
-    <string name="title_activity_about_me">AboutMeActivity</string>
+    <string name="title_activity_about_me">Thanks for Shopping at Best Buy</string>
+    <string name="Survey_Text">First, we'd like to thank you for shopping with us. We recognize
+        that you have many choices about where to spend your hard-earned money and we appreciate
+        that you have given us an opportunity to earn your business. Second, we strive to create
+        the best possible experience for you, and we appreciate your honest feedback about what we
+        are doing well in our stores and where we need to make improvements. Listening to our
+        customers is very important and you can be assured that your voice will be heard. If you made
+        a purchase today you are shortly going to be receiving a Survey Email. If you could fill out
+        that survey and write a comment about you're experience at Best Buy and a brief comment on
+        the service you received from a particular sales person, we would greatly appreciate that
+        feedback. Thank you advance for your time and input.</string>
 </resources>
